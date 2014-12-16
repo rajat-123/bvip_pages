@@ -2,7 +2,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    %title Nan Bagge, Pour your heart out
+    %title BVIP Personal Page
     %link{:href => "/stylesheets/default.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "/stylesheets/progress_bar.css", :rel => "stylesheet", :type => "text/css"}/
@@ -20,33 +20,27 @@
         %ul
           %li
             %a{:href => "#!/home", :style => "padding: 0px"}
-              Nan Bagge
-          %li{"ng-show" => "isLoggedIn() == false"}
-            %a{:href => "#!/register"} Signup
-          %li{"ng-show" => "isLoggedIn() == false"}
-            %a{:href => "#!/login"} Login
+              Home
           %li
-            %a{:href => "#!/live"} Live Concert
-          %li{"ng-show" => "isLoggedIn() == true"}
-            %a{:href => "#!/dashboard"} Dashboard  
-          %li{"ng-show" => "isLoggedIn() == true"}
-            %a{:href => "/logout"} Logout
+            %a{:href => ""} Events
+          %li
+            %a{:href => "#"} About
+          %li
+            %a{:href => "#!/live"} Gallery
+          %li
+            %a{:href => "#!/dashboard"} Social  
+          %li
+            %a{:href => "/logout"} Blog
+          %li
+            %a{:href => "/logout"} Contact
     = yield_content :pre_content            
     = yield
     .footer
-      .about
-        .fff.f24 What is NanBagge?
-        %p Nanbagge is made for people who have a deep desire to express themselves without giving a thought about what the world would think about them. 
-        
+      .about              
         .footerlinks
-          %a{:href => "#"} Company Overview
-          %a{:href => "#"} Our Team
-          %a{:href => "#"} Careers
-          %a{:href => "#"} In the Press
-          %a{:href => "#"} Partners
-          %a{:href => "#"} Privacy and Terms of Use
-          %a{:href => "#"} Contact Us
-        %a.backtotop{:href => "#top"} BACK TO TOP
+          %a{:href => "#"} Terms Of Use
+          %a{:href => "#"} Privacy Policy
+          %a{:href => "#"} Beyond VIP Inc
     / footer ends
 
     / %media-player{"ng-show" => "showMediaPlayer()"}
