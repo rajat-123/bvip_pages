@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0036)http://mme.herokuapp.com/Login.html# -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>My Music Empire - Artist Dashboard</title>
+<link href="styles/default.css" rel="stylesheet" type="text/css">
+<link href="styles/css" rel="stylesheet" type="text/css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/app.js"></script>
+
+</head>
+
+<body style="background:url(images/userbg.jpg ) no-repeat fixed 0px 0px; background-size:cover">
+
+ <div class="header">
+ 	<div class="navi">
+ 	  <ul>
+      	<li><a href="http://mme.herokuapp.com/Home.html" class="logo"><img src="images/logo.png"></a></li>      
+        <li><a href="images/My Music Empire - Sign In.htm">Signup</a></li>
+        <li><a href="http://mme.herokuapp.com/Login.html">Login</a></li>        
+        <li><a href="http://mme.herokuapp.com/Live_Concerts.html">Live Concert</a></li> 
+        <li><a href="images/My Music Empire - Sign In.htm">Help</a></li>         
+ 	  </ul>
+ 	</div>
+ </div>
+ 
+ 	<div class="bandbar">
+    
+    <div class="barholder">
+    <div class="profilepix"><img src="images/profilepix.jpg" width="112" height="112" alt="Profile"></div>
+    <div class="welcome inline">Welcome to
+    <div class="bandname"> Artist Dashboard</div></div>
+    <div class="cfix"></div>
+
+    </div>
+    </div><!--bandbar ends-->
+ 
+ 
+ <div class="content np">
+    <audio controls="" style="display:none" id="ui_song">
+     <source src="http://musique.ccoste.fr/songs/2637a9ff58bfe79008fd43e6de819022f119e6cd.ogg" type="audio/ogg">
+     <!-- The next two lines are only executed if the browser doesn't support MP4 files -->
+     <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type="audio/ogg; codecs=vorbis">
+     <!-- The next line will only be executed if the browser doesn't support the <audio> tag-->
+     <p>Your user agent does not support the HTML5 Audio element.</p>
+    </audio>                     		
+    
+    <div class="leftcol-db">
+    	
+      <div class="songlist_holder">
+        
+        <div class="fs24 m10">Audition Leaderboard
+        <p class="small-txt">This round of auditions ends on Oct 31.</p></div>
+<table border="0" class="songlist" width="100%">
+  <tbody><tr>
+        <th scope="col">#</th>
+        <th scope="col">Artist</th>
+        <th scope="col" class="algn-right" style="text-align:right;" >Score</th>
+      </tr>
+      <tr onclick="play(this)" class="ui-play play">
+        <td>1</td>
+        <td>Rolling Stones</td>
+        <td class="algn-right">12,450</td>
+      </tr>
+      <tr onclick="play(this)" class="ui-play play">
+        <td>2</td>
+        <td>The Beatles</td>
+        <td class="algn-right">11,780</td>
+      </tr>
+      <tr onclick="play(this)" class="ui-play play">
+        <td>3</td>
+        <td>Beach Boys</td>
+        <td class="algn-right">10,456</td>
+      </tr>
+      <tr onclick="play(this)" class="ui-play play">
+        <td>4</td>
+        <td>Imagine Dragons</td>
+        <td class="algn-right">9,450</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Selah Sue</td>
+        <td class="algn-right">1,877</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>The Killers</td>
+        <td class="algn-right">1,245</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Jay Z</td>
+        <td class="algn-right">1,110</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Eric Clapton</td>
+        <td class="algn-right">1,003</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Queen</td>
+        <td class="algn-right">989</td>
+      </tr>
+      </tbody></table>
+    	
+      </div><!--songlist_holder ends-->  
+    
+    </div><!--leftcol ends-->
+    
+    
+    <div class="rightcol-db" style="background:none;">
+    	<div class="tabholder-db">
+<ul class="tabs-dashboards">
+            	<li><a href="images/My Music Empire - Sign In.htm" class="txtlink active" style="white-space: nowrap">Audition Status
+            	    <div class="marker"></div></a></li>
+            	<li><a href="images/My Music Empire - Sign In.htm" class="txtlink" style="white-space: nowrap">End Artist Page<div class="marker"></div></a></li>                
+            	<li><a href="images/My Music Empire - Sign In.htm" class="txtlink" style="white-space: nowrap">Account Setting<div class="marker"></div></a></li>                
+          </ul>
+        </div><!--tabholder ends-->
+        
+       
+       <div class="tab2 songlist_holder" style="margin:50px 0; display:table; ">
+        
+       <img src="images/Capture.PNG" width="549" height="649" border="0" style="border:0px;" /></div>   </div>
+       <!--rightcol ends-->    
+       
+
+<div class="cfix"></div>  
+
+</div><!--content ends-->
+
+<div class="footer">
+	<div class="about">
+    	<div class="fff f24"> What is My Music Empire?</div>
+        <p>My Music Empire is a fantastic new kind of record company that leverages a world of crowd-wisdom and crowd-doers to identify, sign and develop the most promising artists.</p>
+<p>Copyright 2012 My Music Empire, Inc. All Rights Reserved Worldwide. Use subject to Terms of Use and acceptance of our Privacy Policy.</p>
+
+<div class="footerlinks">
+    <a href="images/My Music Empire - Sign In.htm">Company Overview</a>
+    <a href="images/My Music Empire - Sign In.htm">Our Team</a>
+    <a href="images/My Music Empire - Sign In.htm">Careers</a>
+    <a href="images/My Music Empire - Sign In.htm">In the Press</a>
+    <a href="images/My Music Empire - Sign In.htm">Partners</a>
+    <a href="images/My Music Empire - Sign In.htm">Privacy and Terms of Use</a>
+    <a href="images/My Music Empire - Sign In.htm">Contact Us</a>
+</div>
+    </div>
+</div><!--footer ends-->
+
+<div class="pl_holder">
+
+		<div class="mplayer">
+    	<div class="media"><img src="images/1.jpg"/></div>
+        <div class="footerplayer">
+        	<!--<p class="f10 lime">NOW PLAYING</p>-->
+            <p class="songtitle">Selah Sue - Raggamuffin</p>
+            <audio controls="" style="display: block">
+     <source src="http://s3.amazonaws.com/mme-lo/songs/03-Raggamuffin.mp3" type="audio/mpeg">
+   	<source src="http://s3.amazonaws.com/mme-lo/songs/03-Raggamuffin.mp3" type="audio/ogg">
+</audio>
+            
+        </div>
+    </div><!--mplayer ends-->
+    
+    <!-- discover starts -->
+    	<div id="discover_menu">
+    		<div>Discover</div>
+        <div id="discoverOptions">
+        <ul>
+        <li><a href="#">My Playlist</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">New Artists</a></li>
+        <li><a href="#">Top Funding</a></li>
+        <li><a href="#">Top Auditions</a></li>
+        </ul>
+        </div>
+   	 </div>
+    <!-- discover ends -->
+    
+    <div class="pl_list">
+    <div class="pl_list_inner">
+    	<!--<a href="#" class="scroll_left"></a>-->
+        <div class="pl_all">
+        	<!--<p class="f10">COMPLETE PLAYLIST</p>-->
+					<ul class="media_list">
+            	<li>
+              	<a href="#" style="background:url(images/1.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard1.jpg" width="100%" style="border:0;"></div></a>
+              </li>
+            	<li>
+              	<a href="#" style="background:url(images/2.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard2.jpg" width="100%" style="border:0;"></div></a>
+              </li>
+            	<li>
+              	<a href="#" style="background:url(images/16.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard.jpg" width="100%" style="border:0;"></div></a>
+         
+              </li>
+            	<li><a href="#" style="background:url(images/4.jpg) no-repeat center / cover;"><div class="mark">Brand new Band - And Brand New Song</div></a></li>                
+            	<li><a href="#" style="background:url(images/5.jpg) no-repeat center / cover;"><div class="mark">Brand - Brand New Song</div></a></li>
+            	<li class="active"><a href="#" style="background:url(images/6.jpg) no-repeat center / cover;"><div class="mark">Brand new Band - And Brand New Song</div></a></li>
+            	<li><a href="#" style="background:url(images/7.jpg) no-repeat center / cover;"><div class="mark">Brand new Band Brand new Band Brand new BandBrand new Band - And Brand New Song</div></a></li>
+            	<li><a href="#" style="background:url(images/8.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/9.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/10.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/11.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/12.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li> 
+              <li><a href="#" style="background:url(images/13.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/14.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/15.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/16.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>                               
+            </ul>
+        </div>
+        <!--<a href="#" class="scroll_right"></a>-->
+      </div>
+    </div><!--pl_list ends-->
+    
+</div><!--pl_holder ends-->
+  
+  
+
+
+</body></html>

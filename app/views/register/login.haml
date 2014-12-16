@@ -1,0 +1,44 @@
+.content.np{"ng-controller" => "LoginCtrl"}
+  .leftcol
+    .tabholder
+      %ul.signuptabs
+        %li
+          %span.step Already Registered with MME
+    / tabholder ends
+    %form{:name => "login"}
+      .form-err{"ng-show" => "isError()"}
+        {{err_message}}
+      .songlist_holder
+        .fs24.m10 Enter your Login Information
+        %table.signuptable{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}  
+          %tr
+            Please enter UserID or Email&Password        
+          %tr
+            %td{:align => "right", :valign => "top"} Email :
+            %td{:valign => "top"}
+              %input#textfield7{:name => "textfield7", :type => "email", "ng-model" => "account.email"}/
+          %tr
+            %td{:align => "right", :valign => "top"} Password :
+            %td{:valign => "top"}
+              %input#textfield8{:name => "textfield8", :type => "password", "ng-model" => "account.password"}/   
+          %tr
+            %td{:align => "right", :valign => "top"} User Id :
+            %td{:valign => "top"}
+              %input#textfield7{:name => "textfield7", :type => "number","ng-model" => "account.id"}/     
+          %tr
+            %td{:valign => "top"}  
+            %td{:valign => "top"}
+              %input.greenbtn{:type => "button", :href => "javascript:void(0)", "ng-click" => "loginUser()", "ng-disabled"=>" disableSubmit",  :style => "padding:10px; font-size:14px; letter-spacing:0;", :value => "Login"}            
+  / leftcol ends
+  .rightcol
+    #photos.tab2
+      .contestbox
+        %p.fs24.bold Why is My Music Empire better?
+        %p Help text goes here
+      .contestbox
+        %p.fs24.bold An unique process
+        %p Another help goes here
+      .cfix
+    / tab2 ends
+  / rightcol ends
+  .cfix

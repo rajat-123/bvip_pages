@@ -1,0 +1,54 @@
+%form{:name => "step2","ng-controller" => "RegisterCtrl", "ng-init" => "media = {image: {}, audio: {}}"}
+  .songlist_holder
+    .fs24.m10 Connect with Social Media
+    %table.signuptable{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tbody
+        %tr
+          %td{:align => "right", :valign => "top", :width => "15%"}
+            %a{:href => "/auth/facebook?update=true", "open-reg-window"=>""}
+              %img.icon_s{:border => "0", :height => "32", :src => "/images/facebook.png", :width => "32"}/
+          %td.xtrapadding{:valign => "top", :width => "85%"}
+            %span.f12 Connect with your Facebook account so that you can promote on your Facebook page
+        %tr
+          %td{:align => "right", :valign => "top"}
+            %a{:href => "/auth/twitter?update=true", "open-reg-window"=>""}
+              %img.icon_s{:border => "0", :height => "32", :src => "/images/twitter.png", :width => "32"}/
+          %td.xtrapadding{:valign => "top"}
+            %span.f12 Connect with your Twitter account so that you can promote to your Twitter Followers            
+    .fs24.m10 Customize your Page
+    %table.signuptable{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tbody
+        %tr
+          %td{:align => "right", :valign => "top"} Stage Name :
+          %td{:valign => "top", :colspan => "2"}
+            %label{:for => "textfield"}
+            %input{:name => "textfield", :type => "text", "ng-model" => "user_info.stage_name"}/
+        %tr
+          %td{:align => "right", :valign => "top"} Short Bio :
+          %td{:valign => "top",:colspan => "2"}
+            %textarea{:cols => "45", :name => "textarea", :rows => "5", "ng-model" => "user_info.bio", :style => "width:320px; height:80px;"}  
+        %tr
+          %td{:align => "right", :valign => "top"}
+            Flipcard Images :
+          %td{:valign => "top", :width => "22%"}
+            %uploadfile{"form-data" => "#{@cloudinary_params}", "image-type" => "profile_image", "image-title" => "Front Image", "image-width" => "275"}
+          %td{:valign => "top", :width => "21%"}
+            %uploadfile{"form-data" => "#{@cloudinary_params}", "image-type" => "artist_card_bg_image", "image-title" => "Back Image", "image-width" => "275"}
+        %tr
+          %td{:align => "right", :valign => "top"}
+          %td{:valign => "top", :colspan => "2"}
+            %flip-image-preview{:id => "flipPreview"}
+    
+    %image-upload{"form-data" => "#{@cloudinary_params}", "image-type" => "background_image", "image-title" => "Background Image", :width => "100%", "image-width" => "800", "image-height" => "600"}
+
+    / %uploadfile
+    %video-upload{"base-class" => ""}
+    %audio-upload{"base-class" => ""}
+    
+    %table.signuptable{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tbody    
+        %tr         
+          %td{:align => "right", :valign => "top", :width => "100%"}
+            %input.greenbtn{:type => "button", :href => "javascript:void(0)", "ng-click" => "saveArtistInfo()", "ng-disabled"=>"step2.$invalid || isStep2FormInValid() || disableSubmit",  :style => "padding:10px; font-size:14px; letter-spacing:0;", :value => "Finish"}
+          
+

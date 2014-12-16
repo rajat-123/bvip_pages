@@ -1,0 +1,22 @@
+:javascript  
+  var scope = opener.angular.element(opener.$('.scope_use')).scope();
+  var crowd_scope = opener.angular.element(opener.$('.crowd_scope')).scope();
+  console.log(crowd_scope);
+
+  crowd_scope.recd_data.artist_stats = opener.angular.fromJson('#{artist_stats}');
+  crowd_scope.recd_data.crowd_stats = opener.angular.fromJson('#{crowd_stats}');
+  crowd_scope.$apply();
+  console.log(window.opener.global_var); 
+
+  var share_url = opener.location; 
+    if ("#{PADRINO_ENV}" != "production") {
+      share_url = 'http://mme.herokuapp.com/Band_Home.html';
+    }
+  if('#{nwtype}' == "twitter"){        
+    window.location.replace('https://twitter.com/share?url='+escape(share_url)+"&text="+scope.artist.first_name+" is auditioning on MME!!");
+  } else {
+      // TODO integrate previewImg and url. 
+    var previewImg = scope.artist.avatar;
+    var content = "&p[url]="+escape(share_url)+"&p[title]="+escape( scope.artist.first_name + ' on My Music Empire')+"&p[summary]="+escape( scope.artist.bio)+"&p[images][0]="+escape(previewImg)+"&";
+    window.location.replace('http://www.facebook.com/sharer/sharer.php?s=100'+content,'FBShare','toolbar=0,status=0,width=548,height=325,top=100,left=50');
+  }   

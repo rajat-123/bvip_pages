@@ -1,0 +1,53 @@
+%div{"ng-controller" => "DashboardCtrl", "ng-init" => "cdydata = #{@cloudinary_params}"}
+  .bandbar
+    .barholder
+      .profilepix
+        %img.profile_pic{:alt => "Avatar", "ng-src" => "{{profile_pic_url}}", :width => "112"}/
+        %photo-upload{"form-data" => "#{@cloudinary_params}", "cloudinary-api" => "#{@cloudinary_api}", "image-type" => "profile_image", "title" => "Change Profile Image", "base-class" => "change_profile_pic editbtn", "style" => "position: absolute;top: 0;left: 0;"}
+      .welcome.inline
+        Welcome to
+        .bandname Artist Dashboard
+      .cfix
+  .content-db.np.right
+    .rightcol-db{:style => "background:none;"}
+      .tabholder-db{:style => "background:none;"}
+        %ul.tabs-dashboards
+          %li
+            %a.txtlink.active{href: "#/dashboard/playlist", :style => "white-space: nowrap"}
+              My Playlists
+              .marker
+          %li
+            %a.txtlink{href: "javascript:void(0)", "ng-click" => "loadArtistPage()", :style => "white-space: nowrap"}
+              Edit Artist Page
+              .marker
+          %li
+            %a.txtlink{href: "#/dashboard/account", :style => "white-space: nowrap", "sub-tab" => "account"}
+              Edit Account
+              .marker
+          %li
+            %a.txtlink{href: "#/dashboard/settings", :style => "white-space: nowrap", "sub-tab" => "settings"}
+              Crowd-Doers
+              .marker
+          %li
+            %a.txtlink{href: "#/dashboard/create_event", :style => "white-space: nowrap", "sub-tab" => "create_event"}
+              Create Event
+              .marker
+          %li
+            %span{"ng-switch on" => "phase_id"}
+              %a.txtlink{href: "#/dashboard/funding", :style => "white-space: nowrap", "sub-tab" => "funding", "ng-switch-when" => "2"}
+                Funding Goals
+                .marker
+              %a.txtlink{href: "#/dashboard/audition", :style => "white-space: nowrap", "sub-tab" => "audition", "ng-switch-when" => "1"}
+                Audition Status
+                .marker
+              %span{"ng-switch-default" => ""}
+                %a.txtlink{href: "#/dashboard/audition", :style => "white-space: nowrap", "sub-tab" => "audition"}
+                  %div{"ng-bind" => "'Status'"}
+                  .marker        
+          %li
+            %a.txtlink{href: "#/dashboard/booked_event", :style => "white-space: nowrap", "sub-tab" => "booked_event"} 
+              Booked Events
+              .marker
+  .clearfix
+  .content.np
+    %div{"ng-include" => "subtab.url"}

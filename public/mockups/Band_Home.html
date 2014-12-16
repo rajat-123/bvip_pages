@@ -1,0 +1,431 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Music Empire - BandHome</title>
+<link href="styles/default.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/app.js"></script>
+
+<body style="background:url(images/bandbg.jpg) no-repeat fixed 0px -232px; background-size:cover">
+
+ <div  class="header">
+ 	<div class="navi">
+ 	  <ul>
+      	<li><a href="Home.html" class="logo"><img src="images/logo.png" /></a></li>      
+        <li><a href="SignUp_step1.html">Signup</a></li>
+        <li><a href="Login.html">Login</a></li>        
+        <li><a href="Live_Concerts.html">Live Concert</a></li> 
+        <li><a href="#">Help</a></li>         
+ 	  </ul>
+ 	</div>
+ </div>
+ 
+ 	<div class="bandbar">
+    
+    <div class="barholder">
+    <h2 class="bandname">Selah Sue</h2>
+    <p class="bandintro"> Some women choose to follow men, and some women choose to follow their dreams. If you're wondering which way to go, remember that your career will never wake up and tell you that it doesn't love you anymore.</p>
+    <div class="memo">
+      <div class="audition bold">Selah Sue is auditioning on MME!</div></div>
+    </div>
+    </div><!--bandbar ends-->
+ 
+ 
+ <div class="content np">
+ 		
+
+    <audio controls style="display:none" id="ui_song">
+     <source src="http://musique.ccoste.fr/songs/2637a9ff58bfe79008fd43e6de819022f119e6cd.ogg"
+             type='audio/ogg'>
+     <!-- The next two lines are only executed if the browser doesn't support MP4 files -->
+     <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga"
+             type='audio/ogg; codecs=vorbis'>
+     <!-- The next line will only be executed if the browser doesn't support the <audio> tag-->
+     <p>Your user agent does not support the HTML5 Audio element.</p>
+    </audio>                    
+    
+    <div class="leftcol">
+    	
+        
+    
+    	<div class="videowindow">
+         <div class="video">
+          <img id="ui_youtube_share" src="images/youtube_share.png" style="display:none" onclick="shareFB(this)">
+         	<iframe id="ui_youtube_video" width="380" height="315" src="http://www.youtube.com/embed/-IunmW3wI5Q" frameborder="0" allowfullscreen></iframe>
+         </div>
+         
+         <div class="playlist">
+         	<table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="60"><a href="javascript:void(0)" onclick="play(this)" class="ui-play play">play</a></td>
+                <td width="235px"><a href="#" class="songtitle">Raggamuffin (Official Video)</a><br />12.57 | 180,320 plays</td>
+                <td width="25px"><a href="#" class="like">like<span>25</span></a></td>
+                <td><a href="javascript:void(0)" onclick="youtubeShare(this)" class="share">Share</a></td>
+              </tr>
+            </table>
+         </div><!--playlist ends-->
+         
+         <div class="playlist">
+         	<table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="60"><a href="javascript:void(0)" onclick="play(this)" class="ui-play play">play</a></td>
+                <td width="235px"><a href="#" class="songtitle">Raggamuffin (Official Video)</a><br />12.57 | 180,320 plays</td>
+                <td width="25px"><a href="javascript:void(0)" id="ui_like" class="like" onclick="like(this)">like<span>25</span></a></td>
+                <td><a href="javascript:void(0)" onclick="youtubeShare(this)" class="share">Share</a></td>
+              </tr>
+            </table>
+            <div class="likethanks" id="ui_like_thanks" style="display:none">Thank you for liking this song</div>
+         </div><!--playlist ends--> 
+               
+        </div><!--videowindow ends-->
+    
+    </div><!--leftcol ends-->
+    
+    
+    <div class="rightcol">
+    	<div class="tabholder">
+<ul class="tabs">
+            	<li><a href="javascript:void(0)" onclick="selectTabs(document.getElementById('bio'), this)" class="bio active"><img src="images/nav_bio.png" alt="BIO" /><div class="marker"></div></a></li>
+            	<li><a href="javascript:void(0)" onclick="selectTabs(document.getElementById('photos'), this)" class="photos"><img src="images/nav_photos.png" alt="PHOTOS" /><div class="marker"></div></a></a></li>                
+            	<li><a href="javascript:void(0)" onclick="selectTabs(document.getElementById('friend'), this)" class="tellfriend">Audition<div class="marker"></div></a></li>                
+            </ul>
+        </div><!--tabholder ends-->
+        
+        <div class="tab1 ui-tabs" style="display:block" id="bio">
+        	<h2 class="fs24">Help Selah Sue get discovered!</h2>
+        	<div class="introvideo">
+                <!-- <img src="images/intro_artist.jpg" alt="Video" /> -->
+                <iframe width="360" height="280" src="http://www.youtube.com/embed/xrC1WlkU9Dw" frameborder="0" allowfullscreen></iframe>
+                
+            </div>
+          <p class="justify">Selah Sue was not destined to become an artist. “I grew up in a really little town in Belgium, and none of my family was into music,” reveals the twenty‐one year old, with refreshing sincerity. “As a kid, I wanted to be a ballerina. I danced from the age of six to twelve”. </p>
+          <p class="justify">Even without romanticising it, her story is like a fairy tale. It’s the story of a young musician who ignores her fate, and pours her anxieties into her songs and her guitar. “I had all these worries and depressions that I wrote down, it was a way of structuring my thoughts”. She turns her doubts into soul, funk and reggae melodies, trying hard to be worthy of her idols, Lauryn Hill, Erykah Badu and Bob Marley. She sings in local clubs on the weekend and attends high school during the week. </p>
+          <p class="justify">She records in home‐studios, at friends houses, and publishes drafts of her songs on Myspace, without a thought of making a career in music. What happens next seems almost unreal. </p>
+        </div><!--tab1 ends-->
+        
+        <div class="tab2 ui-tabs" style="display:none" id="photos">
+        
+        	<a href="#"><img src="images/a1.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/a2.jpg" alt="Pixs" /></a> 
+        	<a href="#"><img src="images/a3.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/a4.jpg" alt="Pixs" /></a>            
+        	<a href="#"><img src="images/a5.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/a6.jpg" alt="Pixs" /></a> 
+        	<a href="#"><img src="images/a7.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/a8.jpg" alt="Pixs" /></a>            
+
+             <div class="cfix"></div>                             
+        </div><!--tab2 ends-->
+        
+        <div class="tab3 ui-tabs" style="display:none;padding:0;" id="friend">
+				<!--
+        	<h2 class="fs24">Help Selah Sue get discovered!</h2>
+
+            <p>The first stage of any artist getting discovered is getting fans.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec egestas magna. Phasellus at urna mi. Sed molestie lorem non turpis aliquam volutpat. Nulla at ipsum dolor. </p>
+            <p>Vestibulum adipiscing auctor leo vitae consectetur. Ut blandit, dolor eget sollicitudin ultricies, augue ante elementum orci, vitae aliquet sem orci nec ipsum.</p>
+			<p class="f20">Likes : 2,347<br />Shares : 2,546</p>
+            
+            <div class="sharebox">
+            	<p class="f16 bold">SHARE ON FACEBOOK</p>
+                <textarea name="" cols="" rows="" style="width:360px; margin:0 0 5px 0; resize:none; padding:3px;"></textarea>
+                <input type="button" value="Post on Facebook" class="bluebtn" onclick="share(this)"/>
+                <div class="sharethanks" style="display:none" id="ui_share_thanks">Thank you for sharing this page</div>
+            </div>
+            
+            <div class="sharebox">
+            	<p class="f16 bold">SHARE ON TWITTER</p>
+                <input type="button" value="Connect with Twitter to share" class="bluebtn" />
+            </div>                                  
+                                    
+            <div class="sharebox">
+            	<p class="f16 bold">SHARE ON GOOGLE+ or YOUTUBE</p>
+                <input type="button" value="Connect with Google+ to share" class="bluebtn" />
+            </div>
+            
+            <div class="sharebox">
+            	<p class="f16 bold">SHARE BY EMAIL</p>
+                <textarea name="" cols="" rows="" style="width:360px; margin:0 0 5px 0; resize:none; padding:3px;"></textarea>
+                <input type="button" value="Send" class="bluebtn" />
+            </div>-->
+      <!-- ************************************supporters tab*************************************************** -->     
+        <div class="supporter-tab" id="photos">
+        	<div id="audition-phase">
+<!--            <h2 class="f36">Audition Phase</h2>
+-->            
+					<div class="promo-banner">
+          	<a href="Hangout.html">
+         		 <img src="images/mme-promo_1.png" alt="promo_image"/>
+            </a>
+          </div>
+          <div class="goal-to-reach">
+              <div class="fullbar">
+                <div class="current-position" style="left:40%;">
+                  <div class="slider-triangle">
+                  </div>
+                </div>
+              </div>
+              
+               <div class="current-count">
+                    <span class="f14">Current Shares:</span>
+                    <span class="f11">50,158</span>
+               </div>
+               
+              <div class="fund-limit">
+                <span class="f14">Goal:</span>
+                <span class="f11">150,000</span>
+              </div>
+              <div class="cfix"></div>
+            </div>
+            
+          </div> 
+         <!-- evangelist section--> 
+          <div class="each-section">
+          	<div class="top-head">
+            	<div><h2><a href="javascript:void(0);">Evangelist</a></h2></div>
+              <div class="evange-images">
+              	<img src="images/b6.jpg"/>
+                <img src="images/16.jpg"/>
+                <img src="images/a6.jpg"/>
+              </div>
+              <div>500 available</div>
+             </div>
+             <p>
+                Evangelists are the boots-on-the-ground promoters of 
+                Selah Sue! All successful artists needs an army of 
+                Evangelists.
+             </p>
+              <p>
+                <span class="quest">What do I get?</span> ? Evangelists will get pre-release mp3 of 
+the album…and when you do, you will be very very happy
+             </p>
+             <div class="bottom-btns">
+             	<div>
+              	<div class="share-popup">
+                	<div class="fbShare">Share</div>
+                  <div class="twitterShare">Share</div>
+                </div>
+              	<a href="javascript:void(0)" onclick="$('.share-popup').toggle();"><input type="button" value="Click to Share" /></a>
+                <div class="share-progress" style="width:40%;"></div>
+                <div class="to-go">1,000 views. 7,000 to go.</div>
+              </div>
+              <div>
+              	<input type="button" value="Support $" disabled="disabled"/>
+                <div class="to-go">not available until funding phase</div>
+              </div>
+             
+             </div>
+            
+          
+          </div>
+         <!-- evangelist section ends -->
+         <div class="cfix"></div> 
+         <!-- evangelist section--> 
+          <div class="each-section">
+          	<div class="top-head">
+            	<div><h2><a href="javascript:void(0);">Chief Evangelist</a></h2></div>
+              <div class="evange-images">
+              	<img src="images/b6.jpg"/>
+                <img src="images/16.jpg"/>
+                <img src="images/a6.jpg"/>
+              </div>
+              <div>500 available</div>
+             </div>
+             <p>
+                Evangelists are the boots-on-the-ground promoters of 
+                Selah Sue! All successful artists needs an army of 
+                Evangelists.
+             </p>
+              <p>
+                <span class="quest">What do I get?</span> ? Evangelists will get pre-release mp3 of 
+the album…and when you do, you will be very very happy
+             </p>
+             <div class="bottom-btns">
+             	<div>
+              	<a href="#"><input type="button" value="Click to Share"/></a>
+                <div class="share-progress" style="width:40%;"></div>
+                <div class="to-go">1,000 views. 7,000 to go.</div>
+              </div>
+              <div>
+              	<input type="button" value="Support $" disabled="disabled"/>
+                <div class="to-go">not available until funding phase</div>
+              </div>
+             
+             </div>
+            
+          
+          </div>
+         <!-- evangelist section ends -->
+            
+        
+
+             <div class="cfix"></div>                             
+        </div>
+               
+               
+                                        
+        </div>
+        <!--*************************************************tab3 ends**************************************   -->
+    
+    </div><!--rightcol ends-->    
+       
+
+<div class="cfix"></div>  
+
+</div><!--content ends-->
+
+<div class="footer">
+	<div class="about">
+    	<div class="fff f24"> What is My Music Empire?</div>
+        <p>My Music Empire is a fantastic new kind of record company that leverages a world of crowd-wisdom and crowd-doers to identify, sign and develop the most promising artists.</p>
+<p>Copyright 2012 My Music Empire, Inc. All Rights Reserved Worldwide. Use subject to Terms of Use and acceptance of our Privacy Policy.</p>
+
+<div class="footerlinks">
+    <a href="#">Company Overview</a>
+    <a href="#">Our Team</a>
+    <a href="#">Careers</a>
+    <a href="#">In the Press</a>
+    <a href="#">Partners</a>
+    <a href="#">Privacy and Terms of Use</a>
+    <a href="#">Contact Us</a>
+</div>
+<a href="#top" class="backtotop">BACK TO TOP</a>
+    </div>
+</div><!--footer ends-->
+
+<div class="pl_holder">
+
+		<div class="mplayer">
+    	<div class="media"><img src="images/1.jpg"/></div>
+        <div class="footerplayer">
+        	<!--<p class="f10 lime">NOW PLAYING</p>-->
+            <p class="songtitle">Selah Sue - Raggamuffin</p>
+            <audio controls="" style="display: block">
+   <source src="http://s3.amazonaws.com/mme-lo/songs/03-Raggamuffin.mp3" type="audio/mpeg">
+   <source src="http://s3.amazonaws.com/mme-lo/songs/03-Raggamuffin.mp3" type="audio/ogg">
+</audio>
+            
+        </div>
+    </div><!--mplayer ends-->
+    
+    <!-- discover starts -->
+    	<div id="discover_menu">
+    		<div>Discover</div>
+        <div id="discoverOptions">
+        <ul>
+        <li><a href="#">My Playlist</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">New Artists</a></li>
+        <li><a href="#">Top Funding</a></li>
+        <li><a href="#">Top Auditions</a></li>
+        </ul>
+        </div>
+   	 </div>
+    <!-- discover ends -->
+    
+    <div class="pl_list">
+    <div class="pl_list_inner">
+    	<!--<a href="#" class="scroll_left"></a>-->
+        <div class="pl_all">
+        	<!--<p class="f10">COMPLETE PLAYLIST</p>-->
+            <ul class="media_list">
+            	<li>
+              	<a href="#" style="background:url(images/1.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard1.jpg" width="100%" style="border:0;"></div></a>
+              </li>
+            	<li>
+              	<a href="#" style="background:url(images/2.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard2.jpg" width="100%" style="border:0;"></div></a>
+              </li>
+            	<li>
+              	<a href="#" style="background:url(images/16.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard.jpg" width="100%" style="border:0;"></div></a>
+         
+              </li>
+            	<li><a href="#" style="background:url(images/4.jpg) no-repeat center / cover;"><div class="mark">Brand new Band - And Brand New Song</div></a></li>                
+            	<li><a href="#" style="background:url(images/5.jpg) no-repeat center / cover;"><div class="mark">Brand - Brand New Song</div></a></li>
+            	<li class="active"><a href="#" style="background:url(images/6.jpg) no-repeat center / cover;"><div class="mark">Brand new Band - And Brand New Song</div></a></li>
+            	<li><a href="#" style="background:url(images/7.jpg) no-repeat center / cover;"><div class="mark">Brand new Band Brand new Band Brand new BandBrand new Band - And Brand New Song</div></a></li>
+            	<li><a href="#" style="background:url(images/8.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/9.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/10.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/11.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/12.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li> 
+              <li><a href="#" style="background:url(images/13.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/14.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/15.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/16.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>                               
+            </ul>
+        </div>
+        <!--<a href="#" class="scroll_right"></a>-->
+      </div>
+    </div><!--pl_list ends-->
+    
+</div><!--pl_holder ends-->
+
+<div class="crowd-doer-overlay">
+<div class="crowd-doer-popup">
+	<div class="crowd-doer-heading">Crowd-Doers</div>
+  <table width="100%" cellpadding="0" cellspacing="0">
+  	<tr>
+    	<td></td>
+     	<td>Sharing</td>
+      <td>Funding</td>
+      <td>Perks</td>
+      <td>Max Participants</td>
+    </tr>
+  	<tr>
+    	<td>Supporter Level 1</td>
+    	<td>none</td>
+     	<td>$25 or more</td>
+      <td>Pre-release of Album (mp3)</td>
+      <td>none</td>
+    </tr>
+  	<tr>
+    	<td>Supporter Level 2</td>
+     	<td>none</td>
+      <td>$100 or more</td>
+      <td>Above + Signed photo</td>
+      <td>none</td>
+    </tr>
+  	<tr>
+    	<td>Supporter Level 3</td>
+     	<td>none</td>
+      <td>$250 or more</td>
+      <td>Above + T-shirt</td>
+      <td>none</td>
+    </tr>
+  	<tr>
+    	<td>Evangelist</td>
+     	<td>8,000 views</td>
+      <td>$100 or more</td>
+      <td>Supporter L3 + Name on Album Jacket</td>
+      <td>500</td>
+    </tr>
+  	<tr>
+    	<td>Chief Evangelist</td>
+     	<td>15,000 views</td>
+      <td>$200 or more</td>
+      <td>Supporter L3 + Name on Album Jacket</td>
+      <td>250</td>
+    </tr>
+  	<tr>
+    	<td>Producer</td>
+     	<td>none</td>
+      <td>$5,000 or more</td>
+      <td>Supporter L3 + Producer Credit on Album</td>
+      <td>50</td>
+    </tr>
+  	<tr>
+    	<td>Executive Producer</td>
+     	<td>none</td>
+      <td>$50,000 or more</td>
+      <td>Supporter L3 + Executive Producer Credit on Album</td>
+      <td>10</td>
+    </tr>
+  </table>
+</div>
+</div>
+  
+</body>
+</html>

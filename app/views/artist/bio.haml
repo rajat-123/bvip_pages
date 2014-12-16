@@ -1,0 +1,12 @@
+#bio.tab1.ui-tabs{:style => "display:block"}
+  %div{ "ng-switch" => "", "on" => "artist.phase_id"}    
+    %span{"ng-switch-when" => "1"}
+      %h2.fs24{"ng-bind" => "'Help ' + artist.first_name +' ' + artist.last_name +' get discovered!'"} 
+    %span{"ng-switch-when" => "2"}
+      %h2.fs24{"ng-bind"=>"'Help '+artist.first_name+' ' + artist.last_name +' is looking for Crowd do-ers!'"}    
+  .introvideo 
+    
+  %div{"ng-switch" => "", "on" => "isOwnProfile()"}
+    %div{"click-to-edit" => "artist.desc", "field-name" => "desc", "base-class" => "justify", "ng-switch-when" => "true", "edit-label" =>"Change Bio", "max-chars" => "1000"}
+
+    %p.justify{"ng-switch-when" => "false", "ng-bind-html" => "artist.desc"} 

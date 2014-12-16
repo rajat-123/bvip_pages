@@ -1,0 +1,30 @@
+- if is_authenticated?
+  %div.hangout_div{"ng-controller" => "HangoutCtrl"}
+  .bandbar
+    .barholder
+      %img{:src => "/images/txt_hangout.png"}/
+    .form-err{:style => "width:40%; margin-top:0px; margin-left:262px", "ng-show" => "isError()"}
+      {{err_message}}
+  / bandbar ends
+  .content.np
+    .hangout
+      .hangoutvideo
+        %open-tok{"video-streams"=>"video_streams", "max-publishers"=>"max_publishers", "event-id"=>"#{@eid}", "ticket-token"=>"'#{@ticket_token}'"}/          
+    / hangout ends
+    .hangout_col2      
+      %h2.f20.m10 NOW ON STAGE
+      .chat
+        .f12 
+        %h2.f36{:style => "line-height:26px;"} {{artist_first_name + " " + artist_last_name}}
+        .chatwindow{:style => "height:500px;"}
+          %pusher-chat            
+  .cfix
+- else
+  .content.np
+    %p Hey! Please Register/Login to join the hangout
+    %a{:href => "/auth/facebook?from=hangout", "open-share-popup"=>""}
+      %input.bluebtn{:type => "button", :value => "Click Here"}/
+:javascript
+  function Refresh() {
+    location.reload();
+  }

@@ -1,0 +1,27 @@
+<div class="content">
+	<div class="intro-background">
+	    <p>NanBagge is a whole new platform meant for peopel to pour their heart out <br>
+	      People from all walks of life put in their thoughts </p>
+	    
+	    
+	    <br> 
+	</div>
+	<div class="cfix"></div>
+
+	<div class="col">
+		<div ng-repeat="artist in top_artists | filter: {phase_id: 1}| orderBy: 'stats.views'">
+			<flip-image-view></flip-image-view>
+		</div>
+	</div>
+	<div class="col">
+		<div ng-repeat="artist in top_artists | filter: {phase_id: 2}">
+			<flip-image-view></flip-image-view>
+		</div>
+	</div>
+	<div class="col nm">
+		<div ng-repeat="artist in top_artists | filter: {phase_id: 3}">
+			<flip-image-view></flip-image-view>
+		</div>
+	</div>
+</div>
+<div class="cfix"></div>  

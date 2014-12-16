@@ -1,0 +1,9 @@
+#friend.tab3.ui-tabs{"ng-controller" => "ContestCtrl"}
+  %h2.fs24{"ng-bind" => " 'Help ' + artist.first_name + ' ' + artist.last_name + ' wind the contest!'"} 
+  %p Every successful artist is able to make an emotional connection with their fans, Be a crowd-doer and help {{artist.first_name +  artist.last_name}} connect with their fans.
+
+  %p Only the artists who sell the most tickets to their hangouts will move to the next phase of getting a record deal. So help {{artist.first_name +  artist.last_name}} now!
+  
+  .contestbox{"ng-repeat" => "contest in contests"}  
+    %contest
+  

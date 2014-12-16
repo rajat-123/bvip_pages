@@ -1,0 +1,39 @@
+<div class="fbconnect">Chat History</div>
+<div class="pinned">
+<div class="txt_bud  img" id="pinnedDiv" style="display:none">
+          <img ng-src={{pinned_img}} id="pinnedImg"  />
+         </div>
+         <!--txt_bud ends-->
+</div>
+<!-- <scroll-me></scroll-me> -->
+<div class="chat_all" scroll-me = "" id ="chat_window" style="overflow: scroll; height: 355px">
+
+  <div ng-repeat="chat in messages">
+    <div ng-switch on ="chat.message_type">
+      <div ng-switch-when="text">
+        <div ng-class="{true: 'txt_bud', false : 'txt_bud right'}[chat.is_artist]">
+          <div class="bold">{{chat.first_name}}</div>
+           {{chat.message_body | linky}}
+        </div><!--txt_bud ends-->
+        <div class="cfix"></div>
+      </div>
+      <div ng-switch-when="image">
+
+         <div class="txt_bud detect img">
+          <img ng-src="{{chat.message_body}}" id={{chat.upload_time}} />
+         </div><!--txt_bud ends-->
+         <div class="cfix"></div>
+      </div>
+    </div>
+  </div>
+</div>  <!--chat_all ends--> 
+
+<div class="chat_ta">
+  <form name="chatFrm">                    
+  <textarea  ng-model="chat.msg" name="textarea" class="chat_textarea" ng-required="true" on-enter="sendMessage()"></textarea>
+  <div class="chat_btn">
+    
+     <hangout-img ng-show = "isPublisher() == true"></hangout-img>
+  <input type="button" ng-click="sendMessage()" value="Send" class="bluebtn nm" ng-disabled="chatFrm.$invalid"></div>
+  </form>
+</div>     

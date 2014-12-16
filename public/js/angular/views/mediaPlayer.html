@@ -1,0 +1,63 @@
+<init-scroll></init-scroll>
+<div class="pl_holder">
+  <div class="bgparent" style="position:absolute; bottom:70px; display:none">
+    <div class="mark bg-placeholder" >
+             <div class="autoSize firsttext"></div>
+             <div class="autoSize secondtext"></div>
+             <div class="autoSize thirdtext"></div> 
+    </div>
+  </div>
+  <div class="mplayer">
+    <div class="media" ng-style="{'background-image': 'url(' + nowPlayingMedia.artist_info.avatar + ')'}"></div>
+    <div class="footerplayer">
+      <div style="position:absolute; top:3px; right:20px; font-size:10px;">
+        <input type="checkbox" ng-model="disable_autoplay" ng-change="change()"/>
+        Disable AutoPlay
+      </div>
+      <p class="songtitle" ng-bind="nowPlayingMedia.title"></p>
+      <audio id="mediaPlayer" ng-src="{{nowPlayingMedia.url}}" controls autoplay>
+      </audio>
+    </div>
+  </div><!--mplayer ends-->
+  <div id="discover_menu">
+    <div>Discover</div>
+      <div id="discoverOptions">
+      <ul>
+        <li><a href="javascript:void(0)">My Playlist</a></li>
+        <li><a href="javascript:void(0)">Trending</a></li>
+        <li><a href="javascript:void(0)">New Artists</a></li>
+        <li><a href="javascript:void(0)">Top Funding</a></li>
+        <li><a href="javascript:void(0)">Top Auditions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pl_list" id="slide_show_container">
+    <a href="javascript:void(0)" class="scroll_left ui-left"></a>
+    <div class="pl_all" >
+      
+      <ul class="media_list ui-slide-container" style="width:2000px">
+        <li ng-repeat="media in systemPlaylist">
+          <div ng-switch on = "media.artist_info.phase_id">
+              <div ng-switch-when="1">
+                <a href="javascript:void(0);" bgimage firsttext="{{media.stats.likes}} Likes" secondtext="{{media.stats.shares}} Shares" url = "{{media.artist_info.artist_card_bg_image}}" ng-style="{'background-image': 'url(' + media.artist_info.avatar + ')'}" ng-click="$parent.$parent.nowPlayingMedia = media; mediaPlay($index);" >
+                </a>
+              </div>
+              <div ng-switch-when="2"> <!--  TODO add div for devp phase when requirements become clear-->
+                <a href="javascript:void(0);" bgimage firsttext="{{media.stats.shares}} Shares" secondtext="${{media.stats.raised_amount}} Funded" url = "{{media.artist_info.artist_card_bg_image}}" ng-style="{'background-image': 'url(' + media.artist_info.avatar + ')'}" ng-click="$parent.$parent.nowPlayingMedia = media; mediaPlay($index);" >
+                </a>
+              </div>
+              <div ng-switch-when="3"> 
+                <a href="javascript:void(0);" bgimage firsttext="{{2000}} Shares" secondtext="{{29}} PromoDates" thirdtext=" 250 CrowdDoers"url = "{{media.artist_info.artist_card_bg_image}}" ng-style="{'background-image': 'url(' + media.artist_info.avatar + ')'}" ng-click="$parent.$parent.nowPlayingMedia = media; mediaPlay($index);" >
+                </a>
+              </div>
+          </div>        
+        </li>        
+      </ul>
+    
+    <a href="javascript:void(0)" class="scroll_right ui-right"></a>
+  </div><!--pl_list ends-->
+</div>
+
+
+   

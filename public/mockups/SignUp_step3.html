@@ -1,0 +1,214 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Music Empire - Step3</title>
+<link href="styles/default.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){        
+    // set up hover panels
+    // although this can be done without JavaScript, we've attached these events
+    // because it causes the hover to be triggered when the element is tapped on a touch device
+    $('.hover').hover(function(){
+      $(this).addClass('flip');
+    },function(){
+      $(this).removeClass('flip');
+    });
+  });
+</script>  
+</head>
+
+<body >
+
+ <div  class="header">
+ 	<div class="navi">
+ 	  <ul>
+      	<li><a href="Home.html" class="logo"><img src="images/logo.png" /></a></li>      
+        <li><a href="SignUp_step1.html">Signup</a></li>
+        <li><a href="Login.html">Login</a></li>        
+        <li><a href="Live_Concerts.html">Live Concert</a></li> 
+        <li><a href="#">Help</a></li>         
+ 	  </ul>
+ 	</div>
+ </div>
+ 
+ 	<div class="signup">
+    
+    <div class="barholder">
+    <h2 class="bandname">Registration</h2>
+    
+
+    </div>
+    </div><!--bandbar ends-->
+ 
+ 
+ <div class="content np">
+ 		
+
+    
+    <div class="leftcol">
+    	<div class="tabholder">
+<ul class="signuptabs">
+            	<li><a href="SignUp_step1.html"><span class="step">Step 1</span> Enter Contact Information<div class="marker"></div></a></li>
+            	<li><a href="SignUp_step2.html"><span class="step">Step 2</span>Connect with Social Media<div class="marker"></div></a></li>                
+            	<li><a class="active"  href="SignUp_step3.html"><span class="step">Step 3</span>Customize Your Page<div class="marker"></div></a></li>                
+            </ul>
+        </div><!--tabholder ends-->
+        
+    
+    <div class="songlist_holder">
+    
+    <div class="fs24 m10">Customize your Page</div>
+    
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="signuptable">
+  <tr>
+    <td width="33%" align="right" valign="top">Artist Type :</td>
+    <td colspan="3" valign="top"><label for="select"></label>
+      <select name="select" id="select">
+        <option>Artist</option>
+        <option>Crowd-Doer</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Stage Name :</td>
+    <td colspan="3" valign="top"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Bio :</td>
+    <td colspan="3" valign="top"><textarea name="textarea" id="textarea" cols="45" rows="5" style="width:320px; height:80px;"></textarea></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Flipcard Images :
+
+      </td>
+    <td width="26%" valign="top">
+    		<div class="img_upload m10">
+            	<a href="#" class="select_image">Front Image</a>
+            	<a href="#" class="crop">crop</a>                
+            </div>
+            
+            <a href="#" class="f12 bold">Preview Flipcard</a>
+    </td>
+    <td width="21%" valign="top"  class="xtrapadding" >
+    		<div class="img_upload">
+            	<a href="#" class="select_image">Back Image</a>
+            	<a href="#" class="crop reset">reset</a>                
+            </div>    
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Video Link :</td>
+    <td colspan="3" valign="top"><input type="text" name="textfield4" id="textfield4" /></td>
+    </tr>
+  <tr>
+    <td align="right" valign="top" class="xtraheight">Video Description :</td>
+    <td colspan="3" valign="top"  class="xtrapadding" ><textarea name="textarea2" id="textarea2" cols="45" rows="5" style="width:320px; height:80px;"></textarea></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" class="xtraheight">Song :</td>
+    <td colspan="3" valign="top"><a href="#" class="greybtn">Upload</a></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" class="xtraheight">Song Description :</td>
+    <td colspan="3" valign="top"><textarea name="textarea2" id="textarea3" cols="45" rows="5" style="width:320px; height:80px;"></textarea></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="3" valign="top"><span class="f11"><a href="#">Add More Song</a></span></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="3" valign="top">
+    <a href="#" class="greybtn">Preview</a>
+    <a href="Home.html" class="greenbtn" style="padding:8px 10px; font-size:14px; letter-spacing:0; margin-left:15px;">  Finish</a></td>
+  </tr>
+    </table>
+    
+    </div><!--songlist_holder ends-->
+    
+    	
+    
+    </div><!--leftcol ends-->
+    
+    
+    <div class="rightcol"  >
+    	
+        
+
+        
+        <div class="tab2" style="display:no ne" id="photos">
+        
+            
+            <div class="contestbox">
+            	<p class="fs24 bold">Why is My Music Empire better?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ligula lorem, id ultricies diam. Nam vehicula dictum metus, quis consectetur odio facilisis gravida. Fusce facilisis est eu est eleifend fringilla. Cras consectetur mattis augue vel blandit.</p>
+            </div>
+            
+            <div class="contestbox">
+            	<p class="fs24 bold">An unique process</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ligula lorem, id ultricies diam. Nam vehicula dictum metus, quis consectetur odio facilisis gravida. Fusce facilisis est eu est eleifend fringilla. Cras consectetur mattis augue vel blandit.</p>
+            </div>            
+                                        
+                      
+
+             <div class="cfix"></div>                             
+        </div><!--tab2 ends-->
+        
+        
+    
+    </div><!--rightcol ends-->    
+       
+
+<div class="cfix"></div>  
+
+</div><!--content ends-->
+
+<div class="footer">
+	<div class="about">
+    	<div class="fff f24"> What is My Music Empire?</div>
+        <p>My Music Empire is a fantastic new kind of record company that leverages a world of crowd-wisdom and crowd-doers to identify, sign and develop the most promising artists.</p>
+<p>Copyright 2012 My Music Empire, Inc. All Rights Reserved Worldwide. Use subject to Terms of Use and acceptance of our Privacy Policy.</p>
+
+<div class="footerlinks">
+    <a href="#">Company Overview</a>
+    <a href="#">Our Team</a>
+    <a href="#">Careers</a>
+    <a href="#">In the Press</a>
+    <a href="#">Partners</a>
+    <a href="#">Privacy and Terms of Use</a>
+    <a href="#">Contact Us</a>
+</div>
+<a href="#top" class="backtotop">BACK TO TOP</a>
+    </div>
+</div><!--footer ends-->
+
+<div class="black_overlay" style="display:none;">
+	<div class="overlay_content">
+    
+    <div class="hover panel flip" style="width: 290px; height: 130px">
+            <div class="front">
+              <div class="pad">
+                <img src="images/1.jpg" alt="Band">    
+              </div>
+            </div>
+            <div class="back" style="background:url(images/a1.jpg) no-repeat; ">
+              <div class="whitemask">
+              <div class="pad" style="margin:-10px; border:0;">
+                <a href="Band_Home.html"><img src="images/flipcard1.jpg" width="282" height="122" style="border:0;"></a>
+                
+              </div>
+              </div>
+            </div>
+      </div>
+    
+    
+    
+    <a href="#" class="overlay_close"></a>
+    </div>
+</div>
+  
+</body>
+</html>

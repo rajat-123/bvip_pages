@@ -1,0 +1,32 @@
+#friend.tab3.ui-tabs
+  %h2.fs24{"ng-bind" => "'Help ' + artist.first_name + ' ' + artist.last_name + ' get discovered!'"} 
+  %p {{artist.bio}}
+  %p.f20
+    Likes : {{artist.stats.likes}}
+    %br>/
+    Shares : {{artist.stats.shares}}
+  .sharebox
+    %p.f16.bold SHARE ON FACEBOOK        
+    - if is_authenticated? && is_loggedin_to?('facebook')
+      %a{:href => "/media/share?nw_type=fb&object_id={{artist.id}}", "open-share-popup"=>""}
+        %input.bluebtn{:type => "button", :value => "Post on Facebook"}/
+    - else 
+      %a{:href => "/auth/facebook?from=share&object_id={{artist.id}}", "open-share-popup"=>""}
+        %input.bluebtn{:type => "button", :value => "Post on Facebook"}/
+    #ui_share_thanks.sharethanks{:style => "display:none"} Thank you for sharing this page
+  .sharebox
+    %p.f16.bold SHARE ON TWITTER
+    - if is_authenticated? && is_loggedin_to?('twitter')
+      %a{:href => "/media/share?nw_type=twitter&object_id={{artist.id}}", "open-share-popup"=>""}
+        %input.bluebtn{:type => "button", :value => "Connect with Twitter to share"}/
+    - else
+      %a{:href => "/auth/twitter?from=share&object_id={{artist.id}}" ,"open-share-popup"=>""}
+        %input.bluebtn{:type => "button", :value => "Connect with Twitter to share"}/
+  / .sharebox
+  /   %p.f16.bold SHARE ON GOOGLE+ or YOUTUBE
+  /   %input.bluebtn{:type => "button", :value => "Connect with Google+ to share"}/
+  / .sharebox
+  /   %p.f16.bold SHARE BY EMAIL
+  /   %textarea{:cols => "", :name => "", :rows => "", :style => "width:360px; margin:0 0 5px 0; resize:none; padding:3px;"}
+  /   %input.bluebtn{:type => "button", :value => "Send"}/
+/ tab3 ends

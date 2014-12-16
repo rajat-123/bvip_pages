@@ -1,0 +1,11 @@
+:javascript
+  var crowd_scope = opener.angular.element(opener.$('.crowd_scope')).scope();
+
+  crowd_scope.setGlobalVar('#{logged_in}','#{nw_hash}');
+
+  crowd_scope.recd_data.artist_stats = opener.angular.fromJson('#{artist_stats}');
+  crowd_scope.recd_data.crowd_stats = opener.angular.fromJson('#{crowd_stats}');
+  crowd_scope.$apply();
+
+  opener.$('.cardModal').show();
+  this.close();

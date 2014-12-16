@@ -1,0 +1,42 @@
+<div class="content np">
+  <div class="leftcol">
+    <div class="songlist_holder">
+      <div class="fs24 m10">
+        Audition Leaderboard 
+        <p class="small-txt">This round of auditions ends on Oct 31.</p>
+      </div>
+      <table class="songlist" border="0" width="100%">
+        <tbody>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Artist</th>
+            <th class="algn-right" scope="col" style="text-align:right;">Score</th>
+          </tr>
+          <tr class="ui-play play" ng-repeat="artist in leaderboard_artists | orderBy: 'stats.likes':true">
+            <td>{{$index + 1}}.</td>
+            <td>{{artist.first_name}} {{artist.last_name}}</td>
+            <td class="algn-right">{{artist.stats.likes}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="rightcol" style="background:none;"> 
+    <div class="tab2 songlist_holder" style="margin:50px 0; display:table; ">
+        <img src="/images/stats.png" width="549" height="649" border="0" style="border:0px;">
+    </div>   
+
+    <div class="firstView" style="position:absolute;top:180px;left:225px;font-weight:bold">
+    	{{sortedStats[3].count}} {{sortedStats[3].text}}
+    </div>
+    <div class="secondView" style="position:absolute;top:310px;left:230px;font-weight:bold">
+    	{{sortedStats[2].count}} {{sortedStats[2].text}}
+    </div>
+    <div class="thirdView" style="position:absolute;top:440px;left:250px;font-weight:bold">
+    	{{sortedStats[1].count}} {{sortedStats[1].text}}
+    </div>
+    <div class="fourthView" style="position:absolute;top:550px;left:244px;font-weight:bold">
+    	{{sortedStats[0].count}} {{sortedStats[0].text}}
+    </div> 
+  </div>
+</div>

@@ -1,0 +1,10 @@
+#photos.tab2.ui-tabs{:class => "light-box"}
+  %div{"ng-show" => "isOwnProfile() == true"}
+    %photo-upload{"form-data" => "#{@cloudinary_params}", "cloudinary-api" => "#{@cloudinary_api}", "title" => "Add Photo", "image-type" => "image", "base-class" => "addphoto"}
+
+  %div.photoholder    
+    %div.pixholder.item{"ng-repeat" => "photo in userMedia | filter: {media_type: 0}"}
+      %div{"cloudinary-url" => "photo.url", "img-width" => "180", "itemindex"=>"$index","photos-length" => "photos_no.length", "last" => "$parent.state"}
+      %a.delbtn.photodel{:href => "javascript:void(0)", "ng-click" => "removePhoto()", "ng-mouseover" => "addShadow = '1';", "ng-mouseleave" => "addShadow = '1';", "ng-show" => "isOwnProfile() == true"} Delete
+
+  .cfix

@@ -1,0 +1,64 @@
+%form{:name => "step1"}
+  .songlist_holder{"ng-controller" => "RegisterCtrl"}
+    .fs24.m10 Enter your Contact information
+    %table.signuptable{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tr
+        %td{:align => "right", :valign => "top", :width => "38%"} Account Type :
+        %td{:valign => "top", :width => "62%"}
+          %label{:for => "select1"}
+          %select#select2{:name => "select1", "ng-model" => "user_info.user_type", "ng-required" => "true", "ng-options" => "artist_type.name as artist_type.value for artist_type in artist_types"}          
+      %tr
+        %td{:align => "right", :valign => "top", :width => "38%"} First Name :
+        %td{:valign => "top", :width => "62%"}
+          %label{:for => "textfield"}
+          %input#textfield{:name => "textfield", :type => "text", "ng-model" => "user_info.first_name", "ng-required" => "true"}/
+      %tr
+        %td{:align => "right", :valign => "top"} Last Name :
+        %td{:valign => "top"}
+          %input#textfield2{:name => "textfield2", :type => "text", "ng-model" => "user_info.last_name", "ng-required" => "true"}/
+      %tr
+        %td{:align => "right", :valign => "top"} Address :
+        %td{:valign => "top"}
+          %input#textfield3{:name => "textfield3", :type => "text", "ng-model" => "address.line_1", "ng-required" => "true"}/
+      %tr
+        %td{:align => "right", :valign => "top"} City :
+        %td{:valign => "top"}
+          %input#textfield4{:name => "textfield4", :type => "text", "ng-model" => "address.city", "ng-required" => "true"}/
+      %tr
+        %td{:align => "right", :valign => "top"} State :
+        %td{:valign => "top"}
+          %select#select2{:name => "select2", "ng-model" => "address.state", "ng-required" => "true", "ng-options" => "state for state in states"}
+      %tr
+        %td{:align => "right", :valign => "top"} Zipcode :
+        %td{:valign => "top"}
+          %input#textfield5{:name => "textfield4", "form-tip" => "Enter 5 digits", :type => "text", "ng-model" => "address.zip_code", "ng-required" => "true", "ng-pattern" => "/^\\d{5}$/"}/      
+      %tr
+        %td.xtraheight{:align => "right", :valign => "top"} Phone Number :
+        %td{:valign => "top"}
+          %input#textfield6{:name => "textfield6", "form-tip" => "Enter 10 digits", :type => "text", "ng-model" => "user_info.phone_number", "ng-required" => "true", "ui-mask" => "(999) 999-9999", "ng-pattern" => "/^\\d{10}$/"}/
+      %tr
+        %td{:align => "right", :valign => "top"} Email :
+        %td{:valign => "top"}
+          %input#textfield7{:name => "textfield7", :type => "email", "ng-model" => "user_info.email", "ng-required" => "true"}/
+      %tr
+        %td{:align => "right", :valign => "top"} Password :
+        %td{:valign => "top"}
+          %input#textfield8{:name => "textfield8", :type => "password", "ng-model" => "user_info.password", "ng-required" => "true"}/
+      %tr
+        %td{:align => "right", :valign => "top"} Re-enter Password :
+        %td{:valign => "top"}
+          %input#textfield9{:name => "textfield9", :type => "password", "ng-model" => "user_info.password_confirmation", "ng-required" => "true", "validate-confirm-password" => "textfield8"}/
+      %tr
+        %td{:valign => "top"}  
+        %td{:valign => "top"}
+          %span.f11
+            By clicking "Create Account" you agree to My Music Empire
+            %a{:href => "#"} Terms & Conditions
+            and
+            %a{:href => "#"} Privacy Policy
+      %tr
+        %td{:valign => "top"}  
+        %td{:valign => "top"}
+          %input.greenbtn{:type => "button", :href => "javascript:void(0)", "ng-click" => "createAccount()", "ng-disabled"=>"step1.$invalid || disableSubmit",  :style => "padding:10px; font-size:14px; letter-spacing:0;", :value => "Create Account"}
+  / songlist_holder ends
+ 

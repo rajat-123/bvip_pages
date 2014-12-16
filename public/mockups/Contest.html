@@ -1,0 +1,474 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Music Empire - Contest</title>
+<link href="styles/default.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/app.js"></script>
+
+<body style="background:url(images/bandbg2.jpg) no-repeat fixed 0px 0px; background-size:cover">
+
+ <div  class="header">
+ 	<div class="navi">
+ 	  <ul>
+      	<li><a href="Home.html" class="logo"><img src="images/logo.png" /></a></li>      
+        <li><a href="SignUp_step1.html">Signup</a></li>
+        <li><a href="Login.html">Login</a></li>        
+        <li><a href="Live_Concerts.html">Live Concert</a></li> 
+        <li><a href="#">Help</a></li>         
+ 	  </ul>
+ 	</div>
+ </div>
+ 
+ 	<div class="bandbar">
+    
+    <div class="barholder">
+    <h2 class="bandname">The XX</h2>
+    <p class="bandintro"> The XX are an English indie pop band, formed in London in 2008. The group released their debut album, XX in August 2009. The album ranked highly on many best of 2009 lists, placing number one on the list compiled by The Guardian.</p>
+    <div class="memo memocontest"><div class="contest">The XX is in the contest to<br>get funded</div></div>
+    </div>
+    </div><!--bandbar ends-->
+ 
+ 
+ <div class="content np">
+ 		
+
+    
+    <div class="leftcol">
+    	
+        
+    
+    	<div class="videowindow">
+         <div class="video">
+         	<iframe width="380" height="315" src="http://www.youtube.com/embed/Pib8eYDSFEI" frameborder="0" allowfullscreen></iframe>
+         </div>
+         
+         <div class="playlist">
+         	<table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="60"><a href="#" class="play">play</a></td>
+                <td width="235px"><a href="#" class="songtitle">The XX - Crystalised </a><br />12.57 | 180,320 plays</td>
+                <td width="25px"><a href="#" class="like"><span>25</span></a></td>
+                <td><a href="#" class="share">Share</a></td>
+              </tr>
+            </table>
+         </div><!--playlist ends-->
+         
+         <div class="playlist">
+         	<table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="60"><a href="#" class="play active">play</a></td>
+                <td width="235px"><a href="#" class="songtitle">The XX - Basic Space </a><br />12.57 | 180,320 plays</td>
+                <td width="25px"><a href="javascript:void(0)" id="ui_like" class="like" onclick="like(this)" class="like">like<span>25</span></a></td>
+                <td><a href="#" class="share">Share</a></td>
+              </tr>
+            </table>
+            <div class="likethanks" id="ui_like_thanks" style="display:none">Thank you for liking this song</div>
+         </div><!--playlist ends--> 
+               
+        </div><!--videowindow ends-->
+    
+    </div><!--leftcol ends-->
+    
+    
+    <div class="rightcol">
+    	<div class="tabholder">
+        	<ul class="tabs">
+            	<li><a href="javascript:void(0)" onclick="selectTabs(document.getElementById('bio'), this)"  class="bio active"><img src="images/nav_bio.png" alt="BIO" /><div class="marker"></div></a></li>
+            	<li><a href="javascript:void(0)" onclick="selectTabs(document.getElementById('photos'), this)"  class="photos"><img src="images/nav_photos.png" alt="PHOTOS" /><div class="marker"></div></a></a></li>                
+            	<li><a href="javascript:void(0)" onclick="selectTabs(document.getElementById('friend'), this)"  class="tellfriend">Funding<div class="marker"></div>
+                	<div class="sharecount">1,234 TICKETS BROUGHT</div>
+                </a></li>                
+            </ul>
+        </div><!--tabholder ends-->
+        
+        <div class="tab1 justify ui-tabs" style="display:no ne" id="bio" >
+        	<h2 class="fs24">Help The XX win the contest!</h2>
+        	<div class="introvideo">
+                <!-- <img src="images/intro_artist2.jpg" alt="Video" /> -->
+                <iframe width="360" height="280" src="http://www.youtube.com/embed/1OsWwp-8IpE" frameborder="0" allowfullscreen></iframe>
+            </div>
+          <p>The XX are an English indie pop band, formed in London in 2008. The group released their debut album, XX in August 2009. The album ranked highly on many best of 2009 lists, placing number one on the list compiled by The Guardian and second for NME. In 2010, the band won the Mercury Music Prize for their debut album. Their second album, Coexist, was released on 10 September 2012.</p>
+          <p>The music of the album was used extensively on television and in media such as 24/7, Person of Interest, NBC's coverage of the 2010 Winter Olympic Games;[18] during the series Cold Case, Suits, Mercy, the Greek version of Next Top Model, Bedlam, Hung, 90210, as well as being the feature song for the March 2010 E4 advert for 90210, Misfits, the Karl Lagerfeld Fall/Winter 2011 fashion show, Waterloo Road, and the film I Am Number Four. </p>
+
+        </div><!--tab1 ends-->
+        
+        <div class="tab2 ui-tabs" style="display:none" id="photos">
+        
+        	<a href="#"><img src="images/b1.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/b2.jpg" alt="Pixs" /></a> 
+        	<a href="#"><img src="images/b3.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/b4.jpg" alt="Pixs" /></a>            
+        	<a href="#"><img src="images/b5.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/b6.jpg" alt="Pixs" /></a> 
+        	<a href="#"><img src="images/b7.jpg" alt="Pixs" /></a>
+        	<a href="#"><img src="images/b8.jpg" alt="Pixs" /></a>            
+
+             <div class="cfix"></div>                             
+        </div><!--tab2 ends-->
+        
+<!--        <div class="tab3 ui-tabs" style="display:none;" id="friend">
+
+        	<h2 class="fs24">Help The XX wind the contest</h2>
+
+            <p>Every successfull artist is able to make an emotional connection with their fans, Be a crowd-doer and help The XX connect with their fans.</p>
+
+<p>Only the artists who sell the most tickets to their hangouts will move to the next phase of getting a record deal. So help The XX now!</p>
+
+            
+            <div class="contestbox">
+                        	<div class="ticketsold">235<div class="f11">Tickets Sold!</div></div>
+            	<p class="fs24 bold">October 23, 2 PM PT</p>
+				<p>Come join the founding members of The XX as they talk about how they got started and what inspires them.</p>
+                <a href="Hangout.html">
+                    <input type="button" value="Buy Tickets" class="greenbtn"/>
+                </a>    
+                <p class="fineprint">Note: If the artist makes it to funding round, your ticket price will be credited to their Funding goals.</p>
+            </div>
+            
+            <div class="contestbox">
+            	<div class="ticketsold">120<div class="f11">Tickets Sold!</div></div>
+            	<p class="fs24 bold">November 23, 2 PM PT</p>
+				<p>Come join the founding members of The XX as they talk about how they got started and what inspires them.</p>
+                <a href="Hangout.html">
+                    <input type="button" value="Buy Tickets" class="greenbtn" />
+                </a>    
+<p class="fineprint">Note: If the artist makes it to funding round, your ticket price will be credited to their Funding goals.</p>
+            </div>         
+            
+                                        
+        </div>-->
+        <!--tab3 ends-->
+
+<!--**************************************************************************************-->
+ <div class="supporter-tab" id="friend" style="display:none;">
+        	<div id="audition-phase">
+<!--            <h2 class="f36">Audition Phase</h2>
+-->            
+<!--					<div class="promo-banner">
+          <img src="images/mme-promo_1.png" alt="promo_image"/>
+          </div>-->
+          <div class="goal-to-reach">
+              <div class="fullbar">
+                <div class="current-position" style="left:25%;">
+                  <div class="slider-triangle">
+                  </div>
+                </div>
+              </div>
+              
+               <div class="current-count">
+                    <span class="f14">Current:</span>
+                    <span class="f11">$2500</span>
+               </div>
+               
+              <div class="fund-limit">
+                <span class="f14">Goal:</span>
+                <span class="f11">$10,000</span>
+              </div>
+              <div class="cfix"></div>
+            </div>
+            
+          </div> 
+         <!-- evangelist section--> 
+          <div class="each-section">
+          	<div class="top-head">            	
+              <div><h2 style="font-size: 16px; font-weight:bold"><a href="javascript:void(0);">Executive Producer</a></h2></div>
+              <div class="evange-images">
+              	<img src="images/b6.jpg"/>
+                <img src="images/16.jpg"/>
+                <img src="images/a6.jpg"/>
+              </div>
+              <div>available</div>
+             </div>
+             <p>
+                Executive Producers are the boots-on-the-ground promoters of 
+                The XX! All successful artists needs an army of 
+                Executive Producers.
+             </p>
+              <p>
+                <span class="quest">What do I get?</span> ? Executive Producers will get pre-release mp3 of 
+the album…and when you do, you will be very very happy
+             </p>
+             <div class="bottom-btns">
+             	<div>
+              	<div class="share-popup">
+                	<div class="fbShare">Share</div>
+                  <div class="twitterShare">Share</div>
+                </div>
+              	<a href="javascript:void(0)" onclick="$('.share-popup').toggle();"><input type="button" value="Click to Share" /></a>
+                <div class="share-progress" style="width:100%;"></div>
+                <div class="to-go">8,123 views.</div>
+              </div>
+              <div>
+              	<input type="button" value="Support $" class="supportBtn" style="background:#515152"/>
+                <!--<div class="to-go">not available until funding phase</div>-->
+              </div>
+             
+             </div>
+            
+          
+          </div>
+         <!-- evangelist section ends -->
+         <div class="cfix"></div> 
+         <!-- evangelist section--> 
+          <div class="each-section">
+          	<div class="top-head">
+              <div><h2 style="font-size: 16px; font-weight:bold"><a href="javascript:void(0);">Producer</a></h2></div>
+              <div class="evange-images">
+              	<img src="images/b6.jpg"/>
+                <img src="images/16.jpg"/>
+                <img src="images/a6.jpg"/>
+              </div>
+              <div>available</div>
+             </div>
+             <p>
+                Producer are the boots-on-the-ground promoters of 
+                The XX! All successful artists needs an army of 
+                Producer.
+             </p>
+              <p>
+                <span class="quest">What do I get?</span> ? Producer will get pre-release mp3 of 
+the album…and when you do, you will be very very happy
+             </p>
+             <div class="bottom-btns">
+             	<div>
+              	<a href="#"><input type="button" value="Click to Share"/></a>
+                <div class="share-progress" style="width:100%;"></div>
+                <div class="to-go">8,123 views.</div>
+              </div>
+              <div>
+              	<input type="button" value="Support $" class="supportBtn" style="background:#515152"/>
+                <!--<div class="to-go">not available until funding phase</div>-->
+              </div>
+             
+
+             </div>
+            
+          
+          </div>
+         <!-- evangelist section ends -->
+            <div class="cfix"></div>                             
+        </div>
+               
+               
+                                        
+        </div>
+
+
+<!-- tab 3 new content ends-->
+
+
+
+    
+    </div><!--rightcol ends-->    
+       
+
+<div class="cfix"></div>  
+
+</div><!--content ends-->
+
+<div class="footer">
+	<div class="about">
+    	<div class="fff f24"> What is My Music Empire?</div>
+        <p>My Music Empire is a fantastic new kind of record company that leverages a world of crowd-wisdom and crowd-doers to identify, sign and develop the most promising artists.</p>
+<p>Copyright 2012 My Music Empire, Inc. All Rights Reserved Worldwide. Use subject to Terms of Use and acceptance of our Privacy Policy.</p>
+
+<div class="footerlinks">
+    <a href="#">Company Overview</a>
+    <a href="#">Our Team</a>
+    <a href="#">Careers</a>
+    <a href="#">In the Press</a>
+    <a href="#">Partners</a>
+    <a href="#">Privacy and Terms of Use</a>
+    <a href="#">Contact Us</a>
+</div>
+<a href="#top" class="backtotop">BACK TO TOP</a>
+    </div>
+</div><!--footer ends-->
+
+<div class="pl_holder">
+
+		<div class="mplayer">
+    	<div class="media"><img src="images/1.jpg"/></div>
+        <div class="footerplayer">
+        	<!--<p class="f10 lime">NOW PLAYING</p>-->
+            <p class="songtitle">Selah Sue - Raggamuffin</p>
+            <audio controls="" style="display: block">
+    <source src="http://s3.amazonaws.com/mme-lo/songs/03-Raggamuffin.mp3" type="audio/mpeg">
+   <source src="http://s3.amazonaws.com/mme-lo/songs/03-Raggamuffin.mp3" type="audio/ogg">
+</audio>
+            
+        </div>
+    </div><!--mplayer ends-->
+    
+    <!-- discover starts -->
+    	<div id="discover_menu">
+    		<div>Discover</div>
+        <div id="discoverOptions">
+        <ul>
+        <li><a href="#">My Playlist</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">New Artists</a></li>
+        <li><a href="#">Top Funding</a></li>
+        <li><a href="#">Top Auditions</a></li>
+        </ul>
+        </div>
+   	 </div>
+    <!-- discover ends -->
+    
+    <div class="pl_list">
+    <div class="pl_list_inner">
+    	<!--<a href="#" class="scroll_left"></a>-->
+        <div class="pl_all">
+        	<!--<p class="f10">COMPLETE PLAYLIST</p>-->
+					<ul class="media_list">
+            	<li>
+              	<a href="#" style="background:url(images/1.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard1.jpg" width="100%" style="border:0;"></div></a>
+              </li>
+            	<li>
+              	<a href="#" style="background:url(images/2.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard2.jpg" width="100%" style="border:0;"></div></a>
+              </li>
+            	<li>
+              	<a href="#" style="background:url(images/16.jpg) no-repeat center / cover;"><div class="mark"><img src="images/flipcard.jpg" width="100%" style="border:0;"></div></a>
+         
+              </li>
+            	<li><a href="#" style="background:url(images/4.jpg) no-repeat center / cover;"><div class="mark">Brand new Band - And Brand New Song</div></a></li>                
+            	<li><a href="#" style="background:url(images/5.jpg) no-repeat center / cover;"><div class="mark">Brand - Brand New Song</div></a></li>
+            	<li class="active"><a href="#" style="background:url(images/6.jpg) no-repeat center / cover;"><div class="mark">Brand new Band - And Brand New Song</div></a></li>
+            	<li><a href="#" style="background:url(images/7.jpg) no-repeat center / cover;"><div class="mark">Brand new Band Brand new Band Brand new BandBrand new Band - And Brand New Song</div></a></li>
+            	<li><a href="#" style="background:url(images/8.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/9.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/10.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/11.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/12.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li> 
+              <li><a href="#" style="background:url(images/13.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/14.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/15.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>      
+              <li><a href="#" style="background:url(images/16.jpg) no-repeat center / cover;"><div class="mark">BB - ABNew Song</div></a></li>                               
+            </ul>
+        </div>
+        <!--<a href="#" class="scroll_right"></a>-->
+      </div>
+    </div><!--pl_list ends-->
+    
+</div><!--pl_holder ends-->
+
+<!-- credit card detail popup -->
+<div class="black_overlay cardModal" style="background:rgba(0,0,0,0.7);display:none;">
+<div class="overlay_content" style="max-width:500px; max-height:388px; color:#000; background:#ccc; padding:15px 15px 5px;">
+
+<h2 class="m10">Enter your credit card details</h2>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="signuptable">
+  <tbody>
+  <tr>
+    <td width="38%" align="right" valign="top">Name as on card :</td>
+    <td width="62%" valign="top"><input type="text" name="textfield3" id="textfield3"></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Card Number :</td>
+    <td valign="top">
+    	<input type="text" name="textfield4" id="textfield4"  style="width:50px;" maxlength="4" >
+    	<input type="text" name="textfield4" id="textfield4"  style="width:50px;" maxlength="4" >   
+    	<input type="text" name="textfield4" id="textfield4"  style="width:50px;" maxlength="4" >
+    	<input name="textfield4" type="text" id="textfield4"  style="width:50px;" maxlength="4" >            
+    </td>
+    </tr>
+  <tr>
+    <td align="right" valign="top">CVC :</td>
+    <td valign="top"><input name="textfield5" type="text" id="textfield5" maxlength="4" style="width:50px;" /></td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Expiration (mm/yyyy) :</td>
+    <td valign="top">    	<input type="text" name="textfield4" id="textfield4"  style="width:50px;" maxlength="2" >
+    	<input type="text" name="textfield4" id="textfield4"  style="width:50px;" maxlength="4" > </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">Amount :</td>
+    <td valign="top"><input type="text" name="textfield7" id="textfield7"></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top"><span class="f11">Please read <a href="#">Terms &amp; Conditions</a></span></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top"><a href="javascript:void(0)" class="greenbtn" style="padding:10px; font-size:14px; letter-spacing:0;" onclick="$('.cardModal').hide();">Submit Payment</a></td>
+  </tr>
+    </tbody></table>
+<a class="overlay_close" href="javascript:void(0)" onclick="$('.cardModal').hide();"></a>
+</div>
+</div>
+<!-- credit card detail popup -->  
+
+
+<div class="crowd-doer-overlay">
+<div class="crowd-doer-popup">
+	<div class="crowd-doer-heading">Crowd-Doers</div>
+  <table width="100%" cellpadding="0" cellspacing="0">
+  	<tr>
+    	<td></td>
+     	<td>Sharing</td>
+      <td>Funding</td>
+      <td>Perks</td>
+      <td>Max Participants</td>
+    </tr>
+  	<tr>
+    	<td>Supporter Level 1</td>
+    	<td>none</td>
+     	<td>$25 or more</td>
+      <td>Pre-release of Album (mp3)</td>
+      <td>none</td>
+    </tr>
+  	<tr>
+    	<td>Supporter Level 2</td>
+     	<td>none</td>
+      <td>$100 or more</td>
+      <td>Above + Signed photo</td>
+      <td>none</td>
+    </tr>
+  	<tr>
+    	<td>Supporter Level 3</td>
+     	<td>none</td>
+      <td>$250 or more</td>
+      <td>Above + T-shirt</td>
+      <td>none</td>
+    </tr>
+  	<tr>
+    	<td>Evangelist</td>
+     	<td>8,000 views</td>
+      <td>$100 or more</td>
+      <td>Supporter L3 + Name on Album Jacket</td>
+      <td>500</td>
+    </tr>
+  	<tr>
+    	<td>Chief Evangelist</td>
+     	<td>15,000 views</td>
+      <td>$200 or more</td>
+      <td>Supporter L3 + Name on Album Jacket</td>
+      <td>250</td>
+    </tr>
+  	<tr>
+    	<td>Producer</td>
+     	<td>none</td>
+      <td>$5,000 or more</td>
+      <td>Supporter L3 + Producer Credit on Album</td>
+      <td>50</td>
+    </tr>
+  	<tr>
+    	<td>Executive Producer</td>
+     	<td>none</td>
+      <td>$50,000 or more</td>
+      <td>Supporter L3 + Executive Producer Credit on Album</td>
+      <td>10</td>
+    </tr>
+  </table>
+</div>
+</div>
+  
+</body>
+</html>

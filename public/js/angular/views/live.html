@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="intro f14 fff">
+    <span class="f36 bold fff">Rooftop Concerts</span> is the best way to connect with an artist. MME encourages all its artists to perform regularly to connect with its audience and to refine their musical talents!   
+  </div>
+  <div class="cfix"></div>
+
+  <div class="calbar">
+      <a href="javascript:void(0)" ng-click="getPrevious()"  class="arrowleft">Left</a>
+        Upcoming
+      <a href="javascript:void(0)" ng-click="getNext()" class="arrowright">Left</a>        
+  </div><!--calbar ends-->
+<time-zone></time-zone>
+<div class="calHolder">
+  <div ng-repeat = "event in events" class="cardBlock" ng-click="redirectToArtist(event.user_id)">
+      <div class="cardTop boxSize">
+        <div class="holdDate">
+          <span class="concertDate bold">{{event.date.day}}<sup>{{event.date.suffix}}</sup></span>
+          <span class="concertMonth">{{event.date.month}}</span>
+        </div>
+        <span class="concertTime">{{event.date.time}}</span>
+        <span class="holdBuyTkt">
+          <span class="buyTickets bold" buy-tickets = "">Buy Tickets</span>
+        </span>
+        <span>{{event.description}}</span>
+      </div>
+      <div class="cardMiddle" bg = "" urlpath = "{{event.image}}"></div>
+      <div class="cardBottom"><img src="/images/bar_code.png"/></div>     
+      <div class="bandNameCard">{{event.artist_first_name + " " + event.artist_last_name}}</div>
+      <div class="bandDetailCard">{{event.artist_truncatedbio}}</div>   
+  </div>
+</div>
+
+<div class="cfix"></div>  
+</div>

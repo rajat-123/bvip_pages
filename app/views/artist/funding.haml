@@ -1,0 +1,127 @@
+#friend.tab3.ui-tabs.crowd_scope{"ng-controller" => "SupporterCtrl"}     
+  .goal-to-reach
+    .fullbar{"ng-show" => "artist.phase_id == 1"}
+      .current-position{"style" => "left:{{(recd_data.artist_stats.shares/recd_data.artist_stats.sharing_goal * 100) | number:0 }}%;", "ng-show" => "recd_data.artist_stats.shares < recd_data.artist_stats.sharing_goal"}
+        .slider-triangle{"ng-show" => "recd_data.artist_stats.shares < recd_data.artist_stats.sharing_goal"}
+      .current-position{"style" => "left:100%;", "ng-show" => "recd_data.artist_stats.shares > recd_data.artist_stats.sharing_goal"}
+        .slider-triangle{"ng-show" => "recd_data.artist_stats.shares > recd_data.artist_stats.sharing_goal"}
+    .fullbar{"ng-show" => "artist.phase_id == 2"}
+      .current-position{"style" => "left:{{recd_data.artist_stats.pledged_amount/recd_data.artist_stats.goal_amount * 100 | number : 0}}%;", "ng-show" => "recd_data.artist_stats.pledged_amount < recd_data.artist_stats.goal_amount"}
+        .slider-triangle{"ng-show" => "recd_data.artist_stats.pledged_amount < recd_data.artist_stats.goal_amount"}
+      .current-position{"style" => "left:100%;", "ng-show" => "recd_data.artist_stats.pledged_amount > recd_data.artist_stats.goal_amount"}
+        .slider-triangle{"ng-show" => "recd_data.artist_stats.pledged_amount > recd_data.artist_stats.goal_amount"}
+    .current-count
+      %span.f14{"ng-show"=>"artist.phase_id == 1"} 
+        Current Shares:
+      %span.f14{"ng-show"=>"artist.phase_id == 2"} 
+        Current:
+      %span.f11{"ng-show"=>"artist.phase_id == 1"} 
+        {{recd_data.artist_stats.shares}}
+      %span.f11{"ng-show"=>"artist.phase_id == 2"} 
+        ${{recd_data.artist_stats.pledged_amount}}
+    .fund-limit
+      %span.f14 Goal:
+      %span.f11{"ng-show"=>"artist.phase_id == 1"}
+        {{recd_data.artist_stats.sharing_goal}}
+      %span.f11{"ng-show"=>"artist.phase_id == 2"}
+        ${{recd_data.artist_stats.goal_amount}}
+    .cfix
+  %div{"ng-repeat" => "level in recd_data.support_levels"}
+    .each-section
+      .top-head
+        %div
+          %h2{"show-crowd-doer" => ""}
+            %a{href: "javascript:void(0);"} {{level.level_name}}
+        .evange-images
+          %img{"ng-repeat"=>"crowd in level.crowds", "ng-src" => "{{crowd.crowd_avatar}}" }/            
+        %div {{level.max_participants}} available
+      %p
+        %span{{"ng-bind-html" => "level.level_desc"}}        
+      .bottom-btns
+        %div#share_div
+          .share-popup       
+            - if is_authenticated? && is_loggedin_to?('facebook')
+              %a.fbShare{:href => "/media/share?nw_type=fb&object_id={{artist.id}}", "open-share-popup"=>""}       
+            - else
+              %a.fbShare{:href => "/auth/facebook?from=share&object_id={{artist.id}}", "open-share-popup"=>""}
+           
+            - if is_authenticated? && is_loggedin_to?('twitter')
+              %a.twitterShare{:href => "/media/share?nw_type=twitter&object_id={{artist.id}}", "open-share-popup"=>""} 
+            - else 
+              %a.twitterShare{:href => "/auth/twitter?from=share&object_id={{artist.id}}" ,"open-share-popup"=>""} 
+          %a.click-btns{href: "javascript:void(0)", "display-share" => ""} 
+            %input{:type => "button", :value => "Click to Share"}/
+          .share-progress{"ng-show" => "level.shares > recd_data.crowd_stats.shares",style: "width:{{recd_data.crowd_stats.shares / level.shares * 100}}%;"}
+          .share-progress{"ng-show" => "level.shares < recd_data.crowd_stats.shares",style: "width:100%;"}
+          .to-go{"ng-show" => "level.shares > recd_data.crowd_stats.shares"}
+            {{recd_data.crowd_stats.shares}} views. {{level.shares - recd_data.crowd_stats.shares}} to go.
+          .to-go{"ng-show" => "level.shares < recd_data.crowd_stats.shares"}
+            {{recd_data.crowd_stats.shares}} views.
+        %div    
+          %a.click-btns{:href => "javascript:void(0)", "ng-click" => "pledge()"} 
+            %input{:type => "button", :value => "Support $", "ng-class" => "{supportBtn : artist.phase_id == 2}"}/
+          .share-progress{"ng-show" => "level.funding > recd_data.crowd_stats.pledged_amount",style: "width:{{recd_data.crowd_stats.pledged_amount / level.funding * 100 | number : 0}}%;"}
+          .share-progress{"ng-show" => "level.funding < recd_data.crowd_stats.pledged_amount",style: "width:100%;"}
+          .to-go{"ng-show" => "level.funding > recd_data.crowd_stats.pledged_amount && artist.phase_id == 2"}
+            ${{recd_data.crowd_stats.pledged_amount}} pledged. ${{level.funding - recd_data.crowd_stats.pledged_amount}} to go.
+          .to-go{"ng-show" => "level.funding < recd_data.crowd_stats.pledged_amount && artist.phase_id == 2"}
+            ${{recd_data.crowd_stats.pledged_amount}} pledged.
+          .to-go{"ng-show" => "artist.phase_id == 1"}
+            not available until funding phase
+    .cfix
+  .black_overlay.cardModal{:style => "display:none;"}
+    .overlay_content{:style => "width:430px; max-height:388px; color:#000; background:#ccc; padding:15px 15px 5px;"}             
+      %h2.m10 Enter your credit card details
+      %form#payment-form{:name => "card_details", :action => "pledge", :method => "POST"}
+        %span.payment-errors
+        %table.signuptable{:style => "border:0; cellpadding: 0; cellspacing:0; width:100"}
+          %tbody          
+          %tr
+            %td{:align => "right", :valign => "top"} Card Number :
+            %td{:valign => "top"}
+              %input#textfield4{"ng-required" => "true", "data-stripe" => "number", :maxlength => "16", :style => "", :type => "text"}/              
+          %tr
+            %td{:align => "right", :valign => "top"} CVC :
+            %td{:valign => "top"}
+              %input#textfield4{"ng-required" => "true", "data-stripe" => "cvc", :maxlength => "4", :style => "width:50px;", :type => "text"}/
+          %tr
+            %td{:align => "right", :valign => "top"} Expiration (mm/yyyy) :
+            %td{:valign => "top"}
+              %input#textfield4{"ng-required" => "true", "data-stripe" => "exp-month", :maxlength => "2", :name => "textfield4", :style => "width:50px;", :type => "text"}/
+              %input#textfield4{"ng-required" => "true", "data-stripe" => "exp-year", :maxlength => "4", :name => "textfield4", :style => "width:50px;", :type => "text"}/              
+          %tr
+            %td{:align => "right", :valign => "top"} Amount :
+            %td{:valign => "top"}
+              %input#textfield7{"ng-required" => "true", "ng-model" => "funding.amount", :name => "textfield7", :type => "text"}/
+          %tr
+            %td{:valign => "top"}
+            %td{:valign => "top"}
+              %span.f11                    
+                %a{:href => "javascript:void(0)"}
+                  Terms & Conditions
+          %tr
+            %td{:valign => "top"}  
+            %td{:valign => "top"}
+              %button.greenbtn{:href => "javascript:void(0)", :style => "padding:10px; font-size:14px; letter-spacing:0;", "ng-disabled"=>"card_details.$invalid", "ng-click" => "callStripe()"} Submit Payment
+      %a.overlay_close{:href => "javascript:void(0)", "ng-click" => "closePreview()"}                                                                                                 
+  
+  .crowd-doer-overlay
+    .crowd-doer-popup
+      .crowd-doer-heading Crowd-Doers
+      %table{cellpadding: "0", cellspacing: "0", width: "100%"}
+
+        %tr
+          %td
+          %td Sharing
+          %td Funding
+          %td Perks
+          %td Max Participants
+        
+        %tr{"ng-repeat" => "level in recd_data.support_levels"}
+          %td {{level.level_name}}
+          %td {{level.shares}}
+          %td {{level.funding}}
+          %td{"ng-bind-html" => "level.perks"}
+          %td {{level.max_participants}}
+        
+        

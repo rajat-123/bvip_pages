@@ -1,0 +1,29 @@
+<div ng-switch on ="noOfEvents">
+
+  <div ng-switch-when="0">
+    <div class="event">
+      <a href="javascript:void(0);"><img src="" width="130" height="130" />
+        <div class="date">{{$index + 1}}</div>
+        <div class="time"> &nbsp;&nbsp;No Events</div>
+      </a>
+    </div>
+  </div>
+
+  <div ng-switch-when="1">
+    <div class="event">
+      <a href="javascript:void(0)" ng-click= "calClick()" ><img ng-src = "{{date[0].artist_avatar}}" width="130" height="130" />
+        <div class="date">{{$index + 1}}</div>
+        <div class="time">{{utc_starttime}} &nbsp;&nbsp;{{date[0].artist_first_name + " " + date[0].artist_last_name}}</div>
+      </a>
+    </div>
+  </div>
+
+  <div ng-switch-when="2">
+    <div class="event">      
+        <div class="date" style="z-index:1">{{$index + 1}}</div>
+        <div ng-repeat="multievents in date | limitTo : 2 " style="height:65px;position:relative; overflow:hidden">          
+            <multi-events></multi-events>          
+        </div>              
+    </div>
+  </div>
+</div>  

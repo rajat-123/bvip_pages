@@ -1,0 +1,34 @@
+<div class="songlist_holder" ng-controller="AccountCtrl">
+  <div class="fs24 m10"> Update your Contact information</div>
+  <form name="accountFrm">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="signuptable">
+      <tbody>
+        <tr>
+          <td align="right" valign="top" class="xtraheight">First Name :</td>
+          <td valign="top"><input type="text" name="firstname"  ng-model="user_info.first_name", ng-required="true"></td>
+        </tr>
+        <tr>
+          <td align="right" valign="top" class="xtraheight">Last Name :</td>
+          <td valign="top"><input type="text" name="lastname"  ng-model="user_info.last_name", ng-required="true"></td>
+        </tr>
+
+        <tr>
+          <td align="right" valign="top" class="xtraheight">Phone Number :</td>
+          <td valign="top"><input type="text" form-tip="Enter 10 digits" name="textfield6"  ng-model="user_info.phone_number" ng-required="true" ng-pattern="/^\d{10}$/"></td>
+        </tr>
+        <tr>
+          <td align="right" valign="top">Email :</td>
+          <td valign="top"><input type="text" name="textfield7"  ng-model="user_info.email" ng-required="true"></td>
+        </tr>
+        
+        <tr>
+          <td valign="top">&nbsp;</td>
+          <td valign="top">
+            <input class="greenbtn" type="button" href="javascript:void(0)" ng-click="updateAccountInfo()" ng-disabled="accountFrm.$invalid || disableSubmit" style="padding:10px; font-size:14px; letter-spacing:0;" value="Update"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>  
+  <div class="cfix"></div>  
+</div>
