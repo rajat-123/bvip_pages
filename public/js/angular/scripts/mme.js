@@ -7,7 +7,7 @@
 var componentModule = angular.module('component', []);
 
 //all the common / models are added to this.. so we can re-use across apps
-var mmeApp = angular.module('mmeApp', ['ngResource', 'ngSanitize', 'component', 'ui.mask']);
+var mmeApp = angular.module('mmeApp', ['angular-carousel', 'ngRoute', 'ngResource', 'ngSanitize', 'component', 'ui.mask']);
 
 var homeApp = angular.module('homeApp', ['mmeApp'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
