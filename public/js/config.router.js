@@ -17,7 +17,7 @@ angular.module('app')
       function ($stateProvider,   $urlRouterProvider) {
           
           $urlRouterProvider
-              .otherwise('/access/signin');
+              .otherwise('/admin/login');
           $stateProvider
               .state('app', {
                   abstract: true,
@@ -316,6 +316,20 @@ angular.module('app')
               .state('lockme', {
                   url: '/lockme',
                   templateUrl: 'tpl/page_lockme.html'
+              })
+              .state('admin', {
+                  url: '/admin',
+                  template: '<div ui-view class="fade-in-right-big smooth"></div>'
+              })
+              .state('admin.login', {
+                  url: '/login',
+                  templateUrl: 'tpl/page_signin.html',
+                  resolve: {
+                      deps: ['uiLoad',
+                        function( uiLoad ){
+                          return uiLoad.load( ['js/controllers/signin.js'] );
+                      }]
+                  }
               })
               .state('access', {
                   url: '/access',
