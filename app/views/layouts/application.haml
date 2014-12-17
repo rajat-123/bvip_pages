@@ -1,108 +1,57 @@
 !!!
-%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+%html{"data-ng-app" => "app", :lang => "en"}
   %head
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    %title BVIP Personal Page
-    %link{:href => "/stylesheets/default.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "/stylesheets/progress_bar.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "/stylesheets/jquery-ui.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "/stylesheets/jquery.Jcrop.min.css", :rel => "stylesheet"}/
-    %link{:href => "/stylesheets/jquery.lightbox-0.5.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "/stylesheets/angular-carousel.css", :rel => "stylesheet", :type => "text/css"}/ 
-  
-    %meta{content: "!", name: "fragment"}/
-
-    = yield_content :head
-
-  %body{"ng-app" => "#{@ng_app}", "ng-controller" => "BaseCtrl", "ng-style" => "{'background-image': 'url('++ ')', 'background-size':'cover', 'background-repeat':'no-repeat', 'background-position':'center top', 'background-attachment':'fixed'}"}
-    .header
-      .navi
-        %ul
-          %li
-            %a{:href => "#!/home", :style => "padding: 0px"}
-              Home
-          %li
-            %a{:href => ""} Events
-          %li
-            %a{:href => "#"} About
-          %li
-            %a{:href => "#!/live"} Gallery
-          %li
-            %a{:href => "#!/dashboard"} Social  
-          %li
-            %a{:href => "/logout"} Blog
-          %li
-            %a{:href => "/logout"} Contact
-    = yield_content :pre_content            
-    = yield
-    .footer
-      .about              
-        .footerlinks
-          %a{:href => "#"} Terms Of Use
-          %a{:href => "#"} Privacy Policy
-          %a{:href => "#"} Beyond VIP Inc
-    / footer ends
-
-    / %media-player{"ng-show" => "showMediaPlayer()"}
-
-    :javascript  
-      var api_cloudinary = {"api_key":"929627956167343","cloud_name":"dywvbs9cv"}; 
-
-    %script{:src => "https://swww.tokbox.com/v1.1/js/TB.min.js", :type => "text/javascript"}
-    %script{:src => "http://js.pusher.com/1.12/pusher.min.js", :type => "text/javascript"}
-  
-    %script{:src => "/js/angular/scripts/vendor/jquery-1.9.1.min.js", :type => "text/javascript"}
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js", :type => "text/javascript"}
-    %script{:src => "https://code.angularjs.org/1.2.0/angular-route.min.js", :type => "text/javascript"}
-    
-    %script{:src => "/js/angular/scripts/vendor/angular-resource.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/angular-sanitize.min.js", :type => "text/javascript"}    
-    %script{:src => "/js/angular/scripts/vendor/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/underscore-min.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery.ui.widget.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery.iframe-transport.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery.fileupload.js", :type => "text/javascript"}  
-    %script{:src => "/js/angular/scripts/vendor/jquery.cloudinary.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery-ui.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery-lightbox.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery.Jcrop.min.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jquery.iframetracker.js", :type => "text/javascript"}        
-    %script{:src => "/js/angular/scripts/vendor/jquery.slideshow.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/jstz-1.0.4.min.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/autoembed.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/stripe.js", :type => "text/javascript"}     
-    %script{:src => "/js/angular/scripts/vendor/mask.js", :type => "text/javascript"}
-
-    %script{:src => "/js/angular/scripts/vendor/angular-carousel.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/vendor/shifty.js", :type => "text/javascript"}
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-touch.min.js", :type => "text/javascript"}
-
-    %script{:src => "/js/stubs.js", :type => "text/javascript"}
-    %script{:src => "/js/util.js", :type => "text/javascript"}
-    
-    / main app JS, that ties things together
-    %script{:src => "/js/angular/scripts/mme.js", :type => "text/javascript"}    
-    
-    %script{:src => "/js/angular/scripts/services/user.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/services/media.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/services/event.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/services/live.js", :type => "text/javascript"}
-    
-    / include the controllers here
-    %script{:src => "/js/angular/scripts/controllers/base.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/controllers/home.js", :type => "text/javascript"}    
-    %script{:src => "/js/angular/scripts/controllers/live.js", :type => "text/javascript"}    
-    %script{:src => "/js/angular/scripts/controllers/dashboard.js", :type => "text/javascript"} 
-    %script{:src => "/js/angular/scripts/controllers/register.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/controllers/artistbase.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/controllers/hangout.js", :type => "text/javascript"}  
-
-    %script{:src => "/js/angular/scripts/directives/component.js", :type => "text/javascript"}
-    %script{:src => "/js/angular/scripts/directives/fileupload.js", :type => "text/javascript"}
-
-    :javascript  
-      $.cloudinary.config(api_cloudinary);
-      var global_var = {logged_user_id: "#{get_loggedin_userid}",logged_with_twitter: "#{is_loggedin_to?('twitter')}", logged_with_fb: "#{is_loggedin_to?('facebook')}"};
-
-    = yield_content :page_javascript
+    %meta{:charset => "utf-8"}/
+    %title BVIP Pages
+    %meta{:content => "app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components", :name => "description"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %link{:href => "stylesheets/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "stylesheets/animate.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "stylesheets/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "stylesheets/simple-line-icons.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "stylesheets/font.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "stylesheets/app.css", :rel => "stylesheet", :type => "text/css"}/
+  %body{"ng-controller" => "AppCtrl"}
+    #app.app{"ng-class" => "{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}", "ui-view" => ""}
+    / jQuery
+    %script{:src => "vendor/jquery/jquery.min.js"}
+    / Angular
+    %script{:src => "vendor/angular/angular.js"}
+    %script{:src => "vendor/angular/angular-animate/angular-animate.js"}
+    %script{:src => "vendor/angular/angular-cookies/angular-cookies.js"}
+    %script{:src => "vendor/angular/angular-resource/angular-resource.js"}
+    %script{:src => "vendor/angular/angular-sanitize/angular-sanitize.js"}
+    %script{:src => "vendor/angular/angular-touch/angular-touch.js"}
+    / Vendor
+    %script{:src => "vendor/angular/angular-ui-router/angular-ui-router.js"}
+    %script{:src => "vendor/angular/ngstorage/ngStorage.js"}
+    / bootstrap
+    %script{:src => "vendor/angular/angular-bootstrap/ui-bootstrap-tpls.js"}
+    / lazyload
+    %script{:src => "vendor/angular/oclazyload/ocLazyLoad.js"}
+    / translate
+    %script{:src => "vendor/angular/angular-translate/angular-translate.js"}
+    %script{:src => "vendor/angular/angular-translate/loader-static-files.js"}
+    %script{:src => "vendor/angular/angular-translate/storage-cookie.js"}
+    %script{:src => "vendor/angular/angular-translate/storage-local.js"}
+    / App
+    %script{:src => "js/app.js"}
+    %script{:src => "js/config.js"}
+    %script{:src => "js/config.lazyload.js"}
+    %script{:src => "js/config.router.js"}
+    %script{:src => "js/main.js"}
+    %script{:src => "js/services/ui-load.js"}
+    %script{:src => "js/filters/fromNow.js"}
+    %script{:src => "js/directives/setnganimate.js"}
+    %script{:src => "js/directives/ui-butterbar.js"}
+    %script{:src => "js/directives/ui-focus.js"}
+    %script{:src => "js/directives/ui-fullscreen.js"}
+    %script{:src => "js/directives/ui-jq.js"}
+    %script{:src => "js/directives/ui-module.js"}
+    %script{:src => "js/directives/ui-nav.js"}
+    %script{:src => "js/directives/ui-scroll.js"}
+    %script{:src => "js/directives/ui-shift.js"}
+    %script{:src => "js/directives/ui-toggleclass.js"}
+    %script{:src => "js/directives/ui-validate.js"}
+    %script{:src => "js/controllers/bootstrap.js"}
+    / Lazy loading
