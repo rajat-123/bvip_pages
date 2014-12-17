@@ -5,13 +5,7 @@
     <div class="bg-light lter b-b wrapper-md">
       <div class="row">
         <div class="col-sm-12 col-xs-12">
-          <div class="h3 text-left" style="float: left" ng-bind="(date | date : 'EEE, MMM d, y')"></div>
-          <div class="text-right">
-              <div datepicker-popup="{{format}}" ng-model="date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"></div>
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </div>
+          <div class="h3 text-left" style="float: left">Configure New Page</div>          
         </div>
       </div>
     </div>
@@ -20,24 +14,195 @@
       <!-- tasks -->
       <div class="row">
         <div class="col-md-12">            
-          <div class="list-group list-group-lg list-group-sp">
-            <div ng-if="loading" class="text-center text-muted font-bold text-xs m-t m-b">loading...</div>
-            <div ng-if="!loading && events.length <= 0" class="text-center text-muted font-bold text-xs m-t m-b">no events</div>
-            <div ng-if="!loading && events" ng-repeat="event in events | orderBy:'date':true">
-              <a ui-sref="app.event({id: event.id})" class="list-group-item clearfix">
-                <span class="pull-left thumb m-r">
-                  <img ng-if="event.poster_mobile_thumb_url" ng-src="{{event.poster_mobile_thumb_url}}">
-                  <img ng-if="!event.poster_mobile_thumb_url" src="img/logo.png">
-                </span>
-                <span class="clear">
-                  <span ng-bind="event.name"></span>
-                  <small class="text-muted clear text-ellipsis" ng-bind="event.venue.name"></small>
-                  <small class="text-muted clear text-ellipsis" ng-bind="(event.date | date : 'fullDate')"></small>
-                </span>
-              </a>
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Hero Image
+            </div>          
+            <div class="panel-body">
+              <form class="bs-example form-horizontal">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Upload Hero Image1</label>
+                  <div class="col-sm-10">
+                    <input ui-jq="filestyle" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Upload Hero Image2</label>
+                  <div class="col-sm-10">
+                    <input ui-jq="filestyle" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Upload Hero Image3</label>
+                  <div class="col-sm-10">
+                    <input ui-jq="filestyle" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                  </div>
+                </div>               
+              </form>
+            </div>
+          </div> 
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Venue Descriptions
+            </div>   
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Title</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="Title">
+                  </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">SubTitle</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="SubTitle">
+                  </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">HighLights</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="HighLights">
+                  </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Background Image</label>
+                  <div class="col-sm-10">
+                    <input ui-jq="filestyle" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                  </div>
+                </div>
+            </div> 
+          </div>
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Instagram Connect
+            </div>   
+            <div class="panel-body">
+              <div class="form-group">
+                  <label class="col-lg-2 control-label">Instagram</label>
+                  <div class="col-lg-10">
+                    <button type="submit" class="btn btn-sm btn-info">Connect</button>
+                  </div>
+                </div>
             </div>
           </div>
-        </div>
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Social
+            </div>   
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Instagram</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Instagram">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Twitter</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Twitter">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Facebook</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Facebook">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Events and Categoring Information
+            </div>   
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Descriptions</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Descriptions">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Highlights</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Highlights">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Image</label>
+                    <div class="col-sm-10">
+                      <input ui-jq="filestyle" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Address
+            </div>   
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Address</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Address">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">  
+            <div class="panel-heading font-bold">
+              Contact Info
+            </div>   
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Contact Email</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Contact">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Contact PHone</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Contact PHone">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Private Event Info</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Private Event Info">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Private Event PHone</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" placeholder="Private Event PHone">
+                </div>
+              </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-lg-2 control-label">Jobs Email</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="Jobs">
+                  </div>
+                </div>
+              <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-lg-2 control-label">Jobs Phone</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="Jobs">
+                  </div>
+                </div>
+            </div>
+          </div>
       </div>
       <!-- / tasks -->
     </div>

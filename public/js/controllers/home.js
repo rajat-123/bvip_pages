@@ -5,15 +5,8 @@
 app
   // Flot Chart controller 
   .controller('FlotChartDemoCtrl', ['$scope', '$stateParams', '$state',  function($scope, $stateParams, $state) {
-    var initDate;
-    
-    
-
-    
-
-    
+    var initDate;  
   }]);
-
 
 app
   // Flot Chart controller 
