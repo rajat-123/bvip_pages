@@ -55,16 +55,18 @@ class Mme < Padrino::Application
     end
   end
 
-  get '/' do
-    
-    redirect '/home'
+  get '/' do    
+    redirect '/admin'
   end  
+
+  get '/admin' do
+    render 'home'
+  end
 
   get '/home' do
     @ng_app = "homeApp" 
     render 'home'
   end
-
 
   # TODO: move this to appropriate controller later
   get '/logout' do

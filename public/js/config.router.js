@@ -17,7 +17,7 @@ angular.module('app')
       function ($stateProvider,   $urlRouterProvider) {
           
           $urlRouterProvider
-              .otherwise('/admin/login');
+              .otherwise('/login');
           $stateProvider
               .state('app', {
                   abstract: true,
@@ -321,7 +321,7 @@ angular.module('app')
                   url: '/admin',
                   template: '<div ui-view class="fade-in-right-big smooth"></div>'
               })
-              .state('admin.login', {
+              .state('login', {
                   url: '/login',
                   templateUrl: 'tpl/page_signin.html',
                   resolve: {
