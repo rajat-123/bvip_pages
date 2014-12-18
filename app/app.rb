@@ -5,14 +5,11 @@ require 'digest/sha1'
 ActiveResource::Base.include_root_in_json = false
 ActiveResource::Base.logger = Logger.new(STDERR)
 
-class Mme < Padrino::Application
+class Bvip < Padrino::Application
   # Forward www.xxx.yyy to xxx.yyy
   if PADRINO_ENV == "production"
     use Rack::NoWWW
   end
-
-  use Rack::Prerender, prerender_service_url: 'http://fast-badlands-7211.herokuapp.com/'
-
 
 
   register Padrino::Rendering

@@ -1,4 +1,4 @@
-Mme.helpers do
+Bvip.helpers do
   def is_authenticated?
     !session[:user].nil?
   end

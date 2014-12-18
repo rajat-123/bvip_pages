@@ -8,8 +8,7 @@ gem 'thin'
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
-gem 'activeresource', "~>3.2.9.rc2", :require => 'active_resource'
-gem 'aws-s3', :require => 'aws/s3' 
+gem 'activeresource', :require => 'active_resource'
 
 # Component requirements
 gem 'haml'
@@ -20,7 +19,7 @@ gem 'rspec', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Padrino Stable Gem
-gem 'padrino', '0.10.7'
+gem 'padrino', '0.12.4'
 
 platforms :jruby do
   gem 'jruby-openssl'

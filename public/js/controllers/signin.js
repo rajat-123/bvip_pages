@@ -8,17 +8,16 @@ app.controller('SigninFormController', ['$scope', '$http', '$state', function($s
     $scope.login = function() {
       $scope.authError = null;
       // Try to login
-      $state.go('app.home');
-      // $http.post('api/login', {email: $scope.user.email, password: $scope.user.password})
-      // .then(function(response) {
-      //   if ( !response.data.user ) {
-      //     $scope.authError = 'Email or Password not right';
-      //   }else{
-      //     $state.go('app.dashboard-v1');
-      //   }
-      // }, function(x) {
-      //   $scope.authError = 'Server Error';
-      // });
+      $http.post('user/login', {email: $scope.user.email, password: $scope.user.password})
+      .then(function(response) {
+        if ( !response.data.user ) {
+          $scope.authError = 'Email or Password not right';
+        }else{
+          $state.go('app.dashboard-v1');
+        }
+      }, function(x) {
+        $scope.authError = 'Server Error';
+      });
     };
   }])
 ;
