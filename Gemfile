@@ -13,6 +13,7 @@ gem 'activeresource', :require => 'active_resource'
 # Component requirements
 gem 'haml'
 gem 'pusher'
+gem 'faraday'
 
 # Test requirements
 gem 'rspec', :group => "test"

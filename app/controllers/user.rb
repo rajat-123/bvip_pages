@@ -1,22 +1,13 @@
 Bvip.controllers :user do
   # Flow for loggin in the user
   post :login do
-    content_type :json
-    input_hash = JSON.parse(request.body.read)    
-    puts input_hash
-    resp = {}   
-    begin
-      resp = User.post("sign_in", nil, input_hash)
-      resp = resp.merge({:success => true})      
-    rescue Exception => e      
-      status 400
-      p "We are in exception"
-      if e.response.code == "401"
-        resp = resp.merge({:success => false, :err_code => $resp_err_codes[:validation], :err_message => "Email/Password do not match"})
-      else
-        resp = resp.merge({:success => false, :err_code => $resp_err_codes[:unknown], :err_message => "Unknown error occurred, please try later"})
-      end
-    end
-    resp.to_json    
+    conn = Faraday.new
+    input_hash = JSON.parse(request.body.read) 
+    input_hash["device_token"] = "475E51BE-F055-47F7-BEC3-36FEAE150C86"
+    conn.params  = input_hash
+    conn.headers = {'Accept' => 'application/json', 'X-API-Key'=>'foobar'}
+    res = conn.get 'https://app.beyondvip.com/api/v1/tokens.json'
+    puts JSON.parse(res.body)
+    resp = {}         
   end  
 end

@@ -167,6 +167,7 @@ DEPENDENCIES
   activeresource
   cloudinary
   dalli
+  faraday
   fql
   haml
   jruby-openssl
