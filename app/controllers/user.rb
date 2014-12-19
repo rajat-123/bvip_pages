@@ -9,8 +9,8 @@ Bvip.controllers :user do
     response = conn.post 'https://app.beyondvip.com/api/v1/tokens.json'
     resp = {}         
     if response.status == 200
-      #TODO: set auth token in session
-      #JSON.parse(response.body)
+      user = JSON.parse(response.body)
+      set_user_loggedin(user)   
       resp = resp.merge({:user => true})  
     else
       resp = resp.merge({:error => 'error'})

@@ -33,8 +33,8 @@ Bvip.helpers do
   end
 
   def set_user_loggedin (user)
-    user_id = user.id
-    session[:user] = {:id => user_id, :first_name => user.first_name, :last_name => user.last_name}
+    user_info = user["user_info"]
+    session[:user] = {:auth_token => user["token"], :id => user_info["id"], :first_name => user_info["first_name"], :last_name => user_info["last_name"]}
   end
 
   def set_user_network (nw_type)
