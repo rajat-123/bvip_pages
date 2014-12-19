@@ -66,7 +66,7 @@ class Bvip < Padrino::Application
   end
 
   # TODO: move this to appropriate controller later
-  get '/logout' do
+  get '/signout' do
     session[:user] = nil
     redirect '/'
   end
