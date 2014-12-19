@@ -6,8 +6,15 @@ Bvip.controllers :user do
     input_hash["device_token"] = "475E51BE-F055-47F7-BEC3-36FEAE150C86"
     conn.params  = input_hash
     conn.headers = {'Accept' => 'application/json', 'X-API-Key'=>'foobar'}
-    res = conn.get 'https://app.beyondvip.com/api/v1/tokens.json'
-    puts JSON.parse(res.body)
+    response = conn.post 'https://app.beyondvip.com/api/v1/tokens.json'
     resp = {}         
+    if response.status == 200
+      #TODO: set auth token in session
+      #JSON.parse(response.body)
+      resp = resp.merge({:user => true})  
+    else
+      resp = resp.merge({:error => 'error'})
+    end
+    resp.to_json
   end  
 end
